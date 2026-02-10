@@ -3,6 +3,8 @@ import Header from './components/Header'
 import Hero from './components/Hero'
 import Features from './components/Features'
 import Events from './pages/Events'
+import EventDetail from './pages/EventDetail'
+import Contact from './pages/Contact'
 
 export default function App() {
   const [route, setRoute] = useState(() => (window.location.hash || '#/').replace('#', ''))
@@ -27,6 +29,8 @@ export default function App() {
         )}
 
         {route === '/events' && <Events />}
+        {route === '/event-detail' && <EventDetail />}
+        {route === '/contact' && <Contact />}
       </main>
       <footer className="site-footer">
         <div className="container">© {new Date().getFullYear()} Krishna Mega Temple</div>

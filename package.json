@@ -10,7 +10,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "fetch-images": "node scripts/download-images.js"
+    "fetch-images": "node scripts/download-images.cjs"
   },
   "dependencies": {
     "react": "^18.2.0",

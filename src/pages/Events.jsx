@@ -29,7 +29,7 @@ const sampleEvents = new Array(9).fill(null).map((_, i) => {
 
 function EventCard({ e }) {
   return (
-    <article className="event-card">
+    <a className="event-card" href="#/event-detail" aria-label={`View details for ${e.title}`}>
       <div className="event-thumb" style={{ backgroundImage: `url(${e.local}), url(${e.unsplash})` }}>
         <div className="event-date">{e.date}</div>
       </div>
@@ -41,7 +41,7 @@ function EventCard({ e }) {
         </div>
         <h4 className="event-title">{e.title}</h4>
       </div>
-    </article>
+    </a>
   )
 }
 
