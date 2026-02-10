@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import Features from './components/Features'
+import LiveBroadcast from './components/LiveBroadcast'
+import Footer from './components/Footer'
 import Events from './pages/Events'
 import EventDetail from './pages/EventDetail'
 import Contact from './pages/Contact'
@@ -22,6 +24,7 @@ export default function App() {
         {route === '/' && (
           <>
             <Hero />
+            <LiveBroadcast />
             <div className="container">
               <Features />
             </div>
@@ -32,9 +35,7 @@ export default function App() {
         {route === '/event-detail' && <EventDetail />}
         {route === '/contact' && <Contact />}
       </main>
-      <footer className="site-footer">
-        <div className="container">© {new Date().getFullYear()} Krishna Mega Temple</div>
-      </footer>
+      <Footer />
     </div>
   )
 }

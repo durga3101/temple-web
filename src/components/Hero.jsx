@@ -17,7 +17,14 @@ export default function Hero({ localPath = '/assets/hero.jpg' }) {
           </p>
           <div className="cta">
             <a className="btn primary" href="#">BUY NOW</a>
-            <a className="btn outline" href="#">LIVE STREAM</a>
+            <a
+              className="btn outline"
+              href="https://www.youtube.com/@sitaramachandradevalayam"
+              target="_blank"
+              rel="noreferrer"
+            >
+              LIVE STREAM
+            </a>
           </div>
         </div>
       </div>
