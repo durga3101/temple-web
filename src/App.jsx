@@ -33,13 +33,13 @@ export default function App() {
             <div className="container">
               <Features />
             </div>
-            <Stats />
-            <About />
-            <Donations />
+            {/* <Stats /> */}
+            {/* <About /> */}
+            {/* <Donations /> */}
             <LiveBroadcast />
             <Ministries />
             <Volunteers />
-            <Testimonials />
+            {/* <Testimonials /> */}
           </>
         )}
 

@@ -2,28 +2,28 @@ import React from 'react'
 
 const mainVideo = {
   url: 'https://www.youtube.com/watch?v=B0wnk4aBj7s',
-  title: 'When our power of choice',
+  title: 'A historic moment! 🛕',
   date: 'February 11, 2026',
   description:
-    'We are a Temple that believes in Krishna and the followers. This is where you should start Lorem ipsum dolor sit amet consectetur adipisicing elit, sed do eiusmod. This is where you should start Lorem ipsum dolor sit amet consectetur.'
+    'A Divine foundation laying ceremony (Sankusthapana). The first stone is laid for the new Temple shrine 🙏. Experience the sacred energy of the Sankusthapana ceremony. '
 }
 
 const thumbVideos = [
   {
     url: 'https://www.youtube.com/shorts/qpq4-LYcTnQ',
-    title: 'Lorem Amet'
+    title: 'Maha Shivaratri Events'
   },
   {
     url: 'https://www.youtube.com/shorts/52wCqHJf8FQ',
-    title: 'Dolor Porta'
+    title: 'Sacred Sparsha Darshan'
   },
   {
     url: 'https://www.youtube.com/shorts/YJOG99jTMYQ',
-    title: 'Ipsum Quis'
+    title: 'Rudra Homam Highlights'
   },
   {
     url: 'https://www.youtube.com/shorts/_9U28mDn7pk',
-    title: 'Sem Nulla'
+    title: 'Deepotsavam Celebration'
   }
 ]
 
