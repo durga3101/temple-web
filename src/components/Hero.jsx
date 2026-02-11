@@ -13,3 +13,24 @@ export default function Hero({ localPath = '/assets/photos/sita-rama-1.jpeg' }) 
     </section>
   )
 }
+
+
+  // <div className="hero-content">
+  //         <h1>GOD GIVE US POWER TO BELIEVE</h1>
+  //         <p>
+  //           Ac mi duis mollis. Sapiente? Scelerisque quae, penatibus? Suscipit
+  //           class corporis nostra rem quos voluptatibus habitant? Fames, vivamus 
+  //           minim nemo enim, gravida lobortis quasi, eum.
+  //         </p>
+  //         <div className="cta">
+  //           <a className="btn primary" href="#">BUY NOW</a>
+  //           <a
+  //             className="btn outline"
+  //             href="https://www.youtube.com/@sitaramachandradevalayam"
+  //             target="_blank"
+  //             rel="noreferrer"
+  //           >
+  //             LIVE STREAM
+  //           </a>
+  //         </div>
+  //       </div>

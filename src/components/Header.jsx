@@ -24,7 +24,15 @@ export default function Header() {
           <a href="#/">HOME</a>
           <a href="#/events">EVENTS</a>
           <a href="#/contact">CONTACT US</a>
-          <a href="#/" className="btn-donate">LIVE</a>
+          <a
+              className="btn-donate"
+              href="https://www.youtube.com/@sitaramachandradevalayam"
+              target="_blank"
+              rel="noreferrer"
+            >
+              LIVE STREAM
+            </a>
+          {/* <a href="#/" className="btn-donate">LIVE</a> */}
         </nav>
       </div>
     </header>
