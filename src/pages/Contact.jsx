@@ -5,7 +5,7 @@ export default function Contact() {
   return (
     <div className="contact-page">
       <PageHero 
-        title="Contact Us"
+        title="Contact US"
         // description="Get in touch with us for any inquiries, event registrations, or spiritual guidance. We are here to serve you."
         // breadcrumbs={[
         //   { label: 'Home', path: '#/' },

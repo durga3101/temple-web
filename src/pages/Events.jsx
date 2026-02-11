@@ -173,7 +173,7 @@ export default function Events() {
         //   { label: 'Home', path: '#/' },
         //   { label: 'Events' }
         // ]}
-        backgroundImage="https://images.unsplash.com/photo-1526481280698-4caa9a3b5d33?auto=format&fit=crop&w=1400&q=80"
+        // backgroundImage="https://images.unsplash.com/photo-1526481280698-4caa9a3b5d33?auto=format&fit=crop&w=1400&q=80"
       />
 
       <main className="container events-listing">

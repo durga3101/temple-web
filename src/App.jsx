@@ -36,8 +36,8 @@ export default function App() {
             {/* <Stats /> */}
             {/* <About /> */}
             {/* <Donations /> */}
-            <Deities />
             <LiveBroadcast />
+            <Deities />
             <Pandits />
             {/* <Testimonials /> */}
           </>

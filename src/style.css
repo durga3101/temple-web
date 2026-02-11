@@ -20,7 +20,7 @@
 
 /* Hero */
 .hero { background-size:cover; background-position:center; min-height:460px; display:flex; align-items:center; color:#fff; position:relative; }
-.hero-overlay { width:100%; background:linear-gradient(to right, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.15) 60%); padding:60px 20px; }
+.hero-overlay { width:100%; padding:60px 20px; }
 .hero-content { max-width:700px; padding:40px; }
 .hero h1 { font-size:38px; margin:0 0 12px; color:#ff7a45 }
 .hero p { color:rgba(255,255,255,0.95); margin-bottom:18px }

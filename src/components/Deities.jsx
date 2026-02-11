@@ -73,7 +73,7 @@ export default function Deities() {
     <section className="ministries-section">
       <div className="container">
         <div className="section-header">
-          <h2>🕉️ Our Deities</h2>
+          <h2>🕉️ Divine Deities </h2>
         </div>
         
         <div className="ministries-filter">
@@ -90,16 +90,19 @@ export default function Deities() {
 
         <div className="ministries-grid">
           {filteredDeities.map(deity => (
-            <article key={deity.id} className="ministry-card">
+            <article 
+              key={deity.id} 
+              className="ministry-card"
+              onClick={() => setActiveCategory(deity.category)}
+              style={{ cursor: 'pointer' }}
+            >
               <div className="ministry-image">
                 <img src={deity.image} alt={deity.title} />
                 <div className="ministry-overlay">
-                  <a href="#/deity" className="ministry-icon">+</a>
+                  <span className="ministry-icon">+</span>
                 </div>
               </div>
-              <h4>
-                <a href="#/deity">{deity.title}</a>
-              </h4>
+              <h4>{deity.title}</h4>
             </article>
           ))}
         </div>

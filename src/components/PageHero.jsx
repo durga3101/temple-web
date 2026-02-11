@@ -4,7 +4,7 @@ export default function PageHero({
   title, 
   description,  //= "We are a Temple that believes in God and the followers. We are a Temple that believes in Krishna.",
   breadcrumbs,  //= [{ label: 'Home', path: '#/' }],
-  backgroundImage = 'https://images.unsplash.com/photo-1500930288181-cd58fbc6b2cc?auto=format&fit=crop&w=1600&q=80'
+  backgroundImage = '/assets/photos/sita-rama-1.jpeg'
 }) {
   return (
     <section className="page-hero" style={{ backgroundImage: `url('${backgroundImage}')` }}>
