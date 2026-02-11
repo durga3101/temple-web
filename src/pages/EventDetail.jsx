@@ -7,11 +7,11 @@ export default function EventDetail() {
       <PageHero 
         title="Maha Shivaratri Grand Celebration"
         description="Join us for the grand three-day Maha Shivaratri celebration with special rituals, processions, and divine blessings."
-        breadcrumbs={[
-          { label: 'Home', path: '#/' },
-          { label: 'Events', path: '#/events' },
-          { label: 'Maha Shivaratri' }
-        ]}
+        // breadcrumbs={[
+        //   { label: 'Home', path: '#/' },
+        //   { label: 'Events', path: '#/events' },
+        //   { label: 'Maha Shivaratri' }
+        // ]}
         backgroundImage="https://images.unsplash.com/photo-1500930288181-cd58fbc6b2cc?auto=format&fit=crop&w=1600&q=80"
       />
 

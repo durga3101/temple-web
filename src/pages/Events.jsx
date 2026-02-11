@@ -168,7 +168,7 @@ export default function Events() {
     <div className="events-page">
       <PageHero 
         title="Mahasivarati Events"
-        description="Join us in celebrating divine festivals and spiritual ceremonies throughout the year"
+        // description="Join us in celebrating divine festivals and spiritual ceremonies throughout the year"
         // breadcrumbs={[
         //   { label: 'Home', path: '#/' },
         //   { label: 'Events' }

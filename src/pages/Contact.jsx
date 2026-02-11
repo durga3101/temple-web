@@ -6,12 +6,12 @@ export default function Contact() {
     <div className="contact-page">
       <PageHero 
         title="Contact Us"
-        description="Get in touch with us for any inquiries, event registrations, or spiritual guidance. We are here to serve you."
-        breadcrumbs={[
-          { label: 'Home', path: '#/' },
-          { label: 'Contact Us' }
-        ]}
-        backgroundImage="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1600&q=80"
+        // description="Get in touch with us for any inquiries, event registrations, or spiritual guidance. We are here to serve you."
+        // breadcrumbs={[
+        //   { label: 'Home', path: '#/' },
+        //   { label: 'Contact Us' }
+        // ]}
+        // backgroundImage="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1600&q=80"
       />
 
       <section className="container contact-main">
