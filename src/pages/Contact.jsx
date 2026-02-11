@@ -6,6 +6,7 @@ export default function Contact() {
     <div className="contact-page">
       <PageHero 
         title="Contact Us"
+        description="Get in touch with us for any inquiries, event registrations, or spiritual guidance. We are here to serve you."
         breadcrumbs={[
           { label: 'Home', path: '#/' },
           { label: 'Contact Us' }
@@ -15,71 +16,93 @@ export default function Contact() {
 
       <section className="container contact-main">
         <aside className="contact-cards">
-          <div className="contact-card">
-            <div className="card-icon">A</div>
+          <div className="contact-card accent-card">
+            <div className="card-icon">📍</div>
             <div>
-              <h4>Office address</h4>
-              <p>Semper Agency Network 30</p>
-              <span>Westbourne Nulla West Bengal 23</span>
-              <span>GMH</span>
+              <h4>Temple Address</h4>
+              <p>Sita Rama Chandra Swami Devalayam</p>
+              <span>Kaakutiya Nagar, Ramachandrapuram</span>
+              <span>Sangareddya District, Telangana</span>
             </div>
           </div>
-          <div className="contact-card">
-            <div className="card-icon">T</div>
+          <div className="contact-card dark-card">
+            <div className="card-icon">📞</div>
             <div>
-              <h4>Telephone number</h4>
-              <p>(123) 456-7890</p>
-              <span>(123) 456-7890</span>
+              <h4>Contact Number</h4>
+              <p>For event registration and inquiries</p>
+              <span className="contact-phone">+91 ***** 456890</span>
             </div>
           </div>
-          <div className="contact-card">
-            <div className="card-icon">M</div>
+          <div className="contact-card light-card">
+            <div className="card-icon">📧</div>
             <div>
-              <h4>Mail address</h4>
-              <p>info@gmail.com</p>
-              <span>info@gmail.com</span>
+              <h4>Email Address</h4>
+              <p>Send us your queries anytime</p>
+              <span className="contact-email">sitaramachandradevalayam@gmail.com</span>
+            </div>
+          </div>
+          <div className="contact-card info-card">
+            <div className="card-icon">⏰</div>
+            <div>
+              <h4>Temple Timings</h4>
+              <p>Morning: 6:00 AM - 12:00 PM</p>
+              <span>Evening: 6:00 PM - 9:00 PM</span>
+              <span className="timing-note">Daily Darshan & Puja</span>
             </div>
           </div>
         </aside>
 
         <div className="contact-form-card">
+          <div className="contact-form-header">
+            <h3>Send Us a Message</h3>
+            <p>Fill out the form below and we'll get back to you as soon as possible</p>
+          </div>
           <form className="contact-form" onSubmit={(ev) => ev.preventDefault()}>
             <div className="contact-grid">
               <label className="field">
-                <span>Name (required)</span>
-                <input placeholder="Your Name" required />
+                <span>Full Name *</span>
+                <input placeholder="Enter your name" required />
               </label>
               <label className="field">
-                <span>Email address (required)</span>
-                <input placeholder="Mail" type="email" required />
+                <span>Email Address *</span>
+                <input placeholder="Enter your email" type="email" required />
               </label>
               <label className="field">
-                <span>Phone (optional)</span>
-                <input placeholder="Your Phone" />
+                <span>Phone Number</span>
+                <input placeholder="Enter your phone" type="tel" />
               </label>
               <label className="field">
-                <span>Services (required)</span>
+                <span>Subject *</span>
                 <select required>
-                  <option value="">Select Services</option>
-                  <option>Events</option>
+                  <option value="">Select a subject</option>
+                  <option>Pooja Registration</option>
                   <option>Donations</option>
-                  <option>Volunteer</option>
+                  <option>Volunteer Opportunities</option>
+                  <option>General Inquiry</option>
+                  <option>Spiritual Guidance</option>
                 </select>
               </label>
             </div>
             <label className="field full">
-              <span>Your message</span>
-              <textarea rows="5" placeholder="Type Message" />
+              <span>Your Message *</span>
+              <textarea rows="6" placeholder="Write your message here..." required />
             </label>
-            <button className="btn primary" type="submit">Send Message</button>
+            <button className="btn primary submit-btn" type="submit">
+              <span>Send Message</span>
+              <span className="btn-icon">→</span>
+            </button>
           </form>
         </div>
       </section>
 
       <section className="container contact-map">
+        <div className="map-header">
+          <h3>Find Us Here</h3>
+          <p>Visit our temple for darshan, events, and spiritual programs</p>
+        </div>
         <iframe
           title="Temple location"
-          src="https://www.openstreetmap.org/export/embed.html?bbox=-80.405%2C25.711%2C-80.119%2C25.882&amp;layer=mapnik"
+          src="https://www.openstreetmap.org/export/embed.html?bbox=78.0,17.0,78.5,17.5&amp;layer=mapnik"
           loading="lazy"
         />
       </section>
@@ -88,7 +111,7 @@ export default function Contact() {
         <div className="newsletter-inner">
           <div className="newsletter-text">
             <h3>Subscribe To Our Newsletter</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore</p>
+            <p>Stay updated with temple events, festivals, and spiritual programs. Receive timely notifications about upcoming celebrations.</p>
           </div>
           <form className="newsletter-form" onSubmit={(ev) => ev.preventDefault()}>
             <input placeholder="Your Email" aria-label="Email" />
