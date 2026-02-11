@@ -6,8 +6,8 @@ import Stats from './components/Stats'
 import About from './components/About'
 import Donations from './components/Donations'
 import LiveBroadcast from './components/LiveBroadcast'
-import Ministries from './components/Ministries'
-import Volunteers from './components/Volunteers'
+import Deities from './components/Deities'
+import Pandits from './components/Pandits'
 import Testimonials from './components/Testimonials'
 import Footer from './components/Footer'
 import Events from './pages/Events'
@@ -36,9 +36,9 @@ export default function App() {
             {/* <Stats /> */}
             {/* <About /> */}
             {/* <Donations /> */}
+            <Deities />
             <LiveBroadcast />
-            <Ministries />
-            <Volunteers />
+            <Pandits />
             {/* <Testimonials /> */}
           </>
         )}
