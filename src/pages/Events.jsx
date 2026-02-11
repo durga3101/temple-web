@@ -122,22 +122,28 @@ const sampleEvents = [
 }))
 
 function EventCard({ e }) {
+  const handleCardClick = (event) => {
+    // Allow clicking on specific links to work normally
+    if (event.target.tagName === 'A') return;
+    window.location.hash = '/event-detail';
+  };
+
   return (
-    <article className="news-card">
+    <article className="news-card" onClick={handleCardClick} style={{ cursor: 'pointer' }}>
       <div className="news-image-wrapper">
-        <a href="#/event-detail" className="news-image" style={{ backgroundImage: `url(${e.local}), url(${e.unsplash})` }}>
+        <div className="news-image" style={{ backgroundImage: `url(${e.local}), url(${e.unsplash})` }}>
           <div className="news-overlay"></div>
-        </a>
+        </div>
       </div>
       <div className="news-content">
         <h3 className="news-title">
-          <a href="#/event-detail">{e.title}</a>
+          <a href="#/event-detail" onClick={(e) => e.stopPropagation()}>{e.title}</a>
         </h3>
         <p className="news-description">{e.description}</p>
         <div className="news-meta">
           <div className="news-author-section">
             <span className="author-label">By</span>
-            <a href="#/author" className="author-name">{e.author}</a>
+            <span className="author-name">{e.author}</span>
             <div className="author-avatar"></div>
           </div>
           <div className="news-info">
@@ -161,7 +167,7 @@ export default function Events() {
   return (
     <div className="events-page">
       <PageHero 
-        title="Temple Events"
+        title="Mahasivarati Events"
         description="Join us in celebrating divine festivals and spiritual ceremonies throughout the year"
         // breadcrumbs={[
         //   { label: 'Home', path: '#/' },
