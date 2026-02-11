@@ -1,37 +1,79 @@
 import React, { useState } from 'react'
 
-const ministries = [
-  { id: 1, title: "Lorem's Ministry", category: 'temple', image: 'https://images.unsplash.com/photo-1604608672325-f41a9b5e7e2f?auto=format&fit=crop&w=400&q=80' },
-  { id: 2, title: "Ipsum's Ministry", category: 'campus', image: 'https://images.unsplash.com/photo-1604608672325-f41a9b5e7e2f?auto=format&fit=crop&w=400&q=80' },
-  { id: 3, title: "Dolor's Ministry", category: 'temple', image: 'https://images.unsplash.com/photo-1604608672325-f41a9b5e7e2f?auto=format&fit=crop&w=400&q=80' },
-  { id: 4, title: 'Web Ministry', category: 'relations', image: 'https://images.unsplash.com/photo-1604608672325-f41a9b5e7e2f?auto=format&fit=crop&w=400&q=80' },
-  { id: 5, title: 'Help Ministry', category: 'religion', image: 'https://images.unsplash.com/photo-1604608672325-f41a9b5e7e2f?auto=format&fit=crop&w=400&q=80' },
-  { id: 6, title: 'Event Ministry', category: 'campus', image: 'https://images.unsplash.com/photo-1604608672325-f41a9b5e7e2f?auto=format&fit=crop&w=400&q=80' },
-  { id: 7, title: "Sed's Ministry", category: 'relations', image: 'https://images.unsplash.com/photo-1604608672325-f41a9b5e7e2f?auto=format&fit=crop&w=400&q=80' },
-  { id: 8, title: "Amet's Ministry", category: 'religion', image: 'https://images.unsplash.com/photo-1604608672325-f41a9b5e7e2f?auto=format&fit=crop&w=400&q=80' },
-  { id: 9, title: 'Temple Ministry', category: 'temple', image: 'https://images.unsplash.com/photo-1604608672325-f41a9b5e7e2f?auto=format&fit=crop&w=400&q=80' }
+const deities = [
+  { 
+    id: 1, 
+    title: 'Sri Sita Rama', 
+    description: 'The embodiment of dharma, devotion, and divine grace.',
+    category: 'sita-rama', 
+    image: '/assets/photos/sita-rama-1.jpeg' 
+  },
+  { 
+    id: 2, 
+    title: 'Lord Shiva', 
+    description: 'The supreme protector and destroyer of negativity.',
+    category: 'shiva', 
+    image: '/assets/photos/siva.jpeg' 
+  },
+  { 
+    id: 3, 
+    title: 'Goddess Durga', 
+    description: 'The divine mother, symbol of strength and protection.',
+    category: 'goddesses', 
+    image: '/assets/photos/maa-1.jpeg' 
+  },
+  { 
+    id: 4, 
+    title: 'Lord Hanuman', 
+    description: 'The eternal devotee, representing courage and unwavering bhakti.',
+    category: 'hanuman', 
+    image: '/assets/photos/hanuman-1.jpeg' 
+  },
+  { 
+    id: 5, 
+    title: 'Lord Ganesha', 
+    description: 'The remover of obstacles and bestower of wisdom and prosperity.',
+    category: 'ganesha', 
+    image: '/assets/photos/Ganeshji.jpeg' 
+  },
+  { 
+    id: 6, 
+    title: 'Nava Grahas', 
+    description: 'The Nava Grahas are the nine celestial deities who influence human life and cosmic balance, worshipped for harmony, prosperity, and protection.',
+    category: 'grahas', 
+    image: '/assets/photos/navagraha-1.webp' 
+  },
+  { 
+    id: 7, 
+    title: 'Shani Graha', 
+    description: 'Shani Graha – The divine dispenser of justice who guides us through karma and discipline..',
+    category: 'grahas', 
+    image: '/assets/photos/navagraha-1.webp' 
+  }
 ]
 
 const categories = [
   { id: 'all', label: 'All' },
-  { id: 'temple', label: 'Temple' },
-  { id: 'campus', label: 'Campus' },
-  { id: 'relations', label: 'Relations' },
-  { id: 'religion', label: 'Religion' }
+  { id: 'sita-rama', label: 'Sri Sita Rama' },
+  { id: 'shiva', label: 'Lord Shiva' },
+  { id: 'hanuman', label: 'Lord Hanuman' },
+  { id: 'ganesha', label: 'Lord Ganesha' },
+  { id: 'grahas', label: 'Nava Grahas' },
+  { id: 'grahas', label: 'Shani Graha' },
 ]
 
 export default function Ministries() {
   const [activeCategory, setActiveCategory] = useState('all')
 
-  const filteredMinistries = activeCategory === 'all' 
-    ? ministries 
-    : ministries.filter(m => m.category === activeCategory)
+  const filteredDeities = activeCategory === 'all' 
+    ? deities 
+    : deities.filter(d => d.category === activeCategory)
 
   return (
     <section className="ministries-section">
       <div className="container">
         <div className="section-header">
-          <h2>Our Ministries</h2>
+          <h2>🕉️ Our Deities</h2>
         </div>
         
         <div className="ministries-filter">
@@ -47,16 +89,16 @@ export default function Ministries() {
         </div>
 
         <div className="ministries-grid">
-          {filteredMinistries.map(ministry => (
-            <article key={ministry.id} className="ministry-card">
+          {filteredDeities.map(deity => (
+            <article key={deity.id} className="ministry-card">
               <div className="ministry-image">
-                <img src={ministry.image} alt={ministry.title} />
+                <img src={deity.image} alt={deity.title} />
                 <div className="ministry-overlay">
-                  <a href="#/ministry" className="ministry-icon">+</a>
+                  <a href="#/deity" className="ministry-icon">+</a>
                 </div>
               </div>
               <h4>
-                <a href="#/ministry">{ministry.title}</a>
+                <a href="#/deity">{deity.title}</a>
               </h4>
             </article>
           ))}
