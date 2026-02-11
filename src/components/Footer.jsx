@@ -16,10 +16,10 @@ export default function Footer() {
         <div className="container footer-grid">
           <div className="footer-col">
             <h4>About Us</h4>
-            <p>Nulla quis lorem ut libero malesuada feugiat. Quisque velit nisi, pretium ut lacinia in</p>
+            <p>Where faith meets peace and hearts connect with the divine</p>
             <ul className="footer-contact">
               {/* <li><span className="dot">P</span> +123) 123 4567 890</li> */}
-              <li><span className="dot">E</span> sitaramachandradevalayam@gmail.com</li>
+              <li><span className="dot">E</span>sitaramachandradevalayam@gmail.com</li>
               <li><span className="dot">A</span> Road No-2, Kakatiya Nagar, Beeramguda, Telangana, India</li>
             </ul>
           </div>
@@ -62,7 +62,7 @@ export default function Footer() {
             © 2025 All Rights Reserved | Design by <span>Tech Varidhi</span>
           </div>
           <div className="footer-brand">
-            SRI SITA RAMA CHANDRA SWAMI DEVALAYAM
+            🚩 🔱 SRI SITA RAMA CHANDRA SWAMI DEVALAYAM 🔱 🚩
             {/* <span>Sita Rama Chandra Swami</span> */}
           </div>
           <div className="footer-socials">
