@@ -1,4 +1,5 @@
 import React from 'react'
+import PageHero from '../components/PageHero'
 
 const queries = [
   'temple,festival',
@@ -68,12 +69,14 @@ function EventCard({ e }) {
 export default function Events() {
   return (
     <div className="events-page">
-      <section className="events-hero">
-        <div className="events-hero-inner">
-          <h2>News Feed</h2>
-          <p>We are a Temple that believes in God and the followers. We are a Temple that believes in Krishna.</p>
-        </div>
-      </section>
+      <PageHero 
+        title="News Feed"
+        breadcrumbs={[
+          { label: 'Home', path: '#/' },
+          { label: 'News Feed' }
+        ]}
+        backgroundImage="https://images.unsplash.com/photo-1526481280698-4caa9a3b5d33?auto=format&fit=crop&w=1400&q=80"
+      />
 
       <main className="container events-listing">
         <div className="news-grid">

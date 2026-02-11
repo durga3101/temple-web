@@ -1,23 +1,17 @@
 import React from 'react'
+import PageHero from '../components/PageHero'
 
 export default function Contact() {
   return (
     <div className="contact-page">
-      <section className="contact-hero">
-        <div className="contact-hero-overlay">
-          <div className="contact-hero-inner">
-            <div>
-              <h1>Contact Us</h1>
-              <p>We are a Temple that believes in God and the followers. We are a Temple that believes in Krishna.</p>
-            </div>
-            <div className="contact-crumb">
-              <span>Home</span>
-              <span className="sep">/</span>
-              <span className="active">Contact Us</span>
-            </div>
-          </div>
-        </div>
-      </section>
+      <PageHero 
+        title="Contact Us"
+        breadcrumbs={[
+          { label: 'Home', path: '#/' },
+          { label: 'Contact Us' }
+        ]}
+        backgroundImage="https://images.unsplash.com/photo-1489515217757-5fd1be406fef?auto=format&fit=crop&w=1600&q=80"
+      />
 
       <section className="container contact-main">
         <aside className="contact-cards">

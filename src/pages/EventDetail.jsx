@@ -1,23 +1,19 @@
 import React from 'react'
+import PageHero from '../components/PageHero'
 
 export default function EventDetail() {
   return (
     <div className="event-detail-page">
-      <section className="event-detail-hero">
-        <div className="event-detail-hero-overlay">
-          <div className="event-detail-hero-inner">
-            <div>
-              <h1>Event Detail</h1>
-              <p>We are a Temple that believes in God and the followers. We are a Temple that believes in Lord Krishna.</p>
-            </div>
-            <div className="event-detail-crumb">
-              <span>Home</span>
-              <span className="sep">/</span>
-              <span className="active">Event Detail</span>
-            </div>
-          </div>
-        </div>
-      </section>
+      <PageHero 
+        title="Event Detail"
+        description="We are a Temple that believes in God and the followers. We are a Temple that believes in Lord Krishna."
+        breadcrumbs={[
+          { label: 'Home', path: '#/' },
+          { label: 'Events', path: '#/events' },
+          { label: 'Event Detail' }
+        ]}
+        backgroundImage="https://images.unsplash.com/photo-1500930288181-cd58fbc6b2cc?auto=format&fit=crop&w=1600&q=80"
+      />
 
       <section className="container event-detail-info">
         <article className="info-card accent">

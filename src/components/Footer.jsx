@@ -1,7 +1,7 @@
 import React from 'react'
 
-const infoLinks = ['Ministries', 'Services', 'Sermons', 'Donations', 'Volunteers', 'Events']
-const otherLinks = ['Shop', 'Cart', 'Checkout', 'Blog', 'Contact Us', 'Policy']
+const infoLinks = ['Deities', 'Services', 'Poojas', 'Volunteers']
+const otherLinks = ['Events', 'Contact Us', 'Policy']
 
 const recentPosts = [
   { id: 1, title: "All we've discovered by now", date: 'October 26, 2020' },
@@ -18,9 +18,9 @@ export default function Footer() {
             <h4>About Us</h4>
             <p>Nulla quis lorem ut libero malesuada feugiat. Quisque velit nisi, pretium ut lacinia in</p>
             <ul className="footer-contact">
-              <li><span className="dot">P</span> +123) 123 4567 890</li>
-              <li><span className="dot">E</span> info@gmail.com</li>
-              <li><span className="dot">A</span> 13/D, Amet Street City Tower, New York USA</li>
+              {/* <li><span className="dot">P</span> +123) 123 4567 890</li> */}
+              <li><span className="dot">E</span> sitaramachandradevalayam@gmail.com</li>
+              <li><span className="dot">A</span> Road No-2, Kakatiya Nagar, Beeramguda, Telangana, India</li>
             </ul>
           </div>
           <div className="footer-col">
@@ -59,16 +59,15 @@ export default function Footer() {
       <div className="footer-bottom">
         <div className="container footer-bottom-inner">
           <div className="footer-copy">
-            © 2013 Your Website Name. All Rights Reserved | Design by <span>TemplateOnWeb</span>
+            © 2025 All Rights Reserved | Design by <span>Tech Varidhi</span>
           </div>
           <div className="footer-brand">
-            KRISHNA MEGA TEMPLE
-            <span>Sita Rama Chandra Swami</span>
+            SRI SITA RAMA CHANDRA SWAMI DEVALAYAM
+            {/* <span>Sita Rama Chandra Swami</span> */}
           </div>
           <div className="footer-socials">
-            <a href="#/" aria-label="Facebook">Fb</a>
-            <a href="#/" aria-label="Twitter">Tw</a>
-            <a href="#/" aria-label="Pinterest">Pi</a>
+            <a href="#/" aria-label="Youtube">YT</a>
+            <a href="#/" aria-label="Whatsapp">WA</a>
             <a href="#/" aria-label="Instagram">In</a>
           </div>
         </div>
