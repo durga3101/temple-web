@@ -10,10 +10,11 @@ export default function Hero({ localPath = '/assets/hero.jpg' }) {
     <section className="hero" style={{ backgroundImage: bg }}>
       <div className="hero-overlay">
         <div className="hero-content">
-          <h1>LOREM IPSUM DOLOR SIT, AMET</h1>
+          <h1>GOD GIVE US POWER TO BELIEVE</h1>
           <p>
             Ac mi duis mollis. Sapiente? Scelerisque quae, penatibus? Suscipit
-            class corporis nostra rem quos voluptatibus habitant.
+            class corporis nostra rem quos voluptatibus habitant? Fames, vivamus 
+            minim nemo enim, gravida lobortis quasi, eum.
           </p>
           <div className="cta">
             <a className="btn primary" href="#">BUY NOW</a>

@@ -3,22 +3,28 @@ import React from 'react'
 export default function Header() {
   return (
     <header className="site-header">
-      {/* <div className="topbar">
-        <div className="contact">+123 123 4567 890 &nbsp; info@gmail.com</div>
+      <div className="topbar">
+        <div className="contact">
+          <span>+123) 123 4567 890</span>
+          <span className="topbar-sep">•</span>
+          <span>info@gmail.com</span>
+        </div>
         <nav className="top-actions">
-          <a href="#">Events</a>
-          <a href="#">Sermons</a>
-          <a href="#">Ministries</a>
+          <a href="#/events">EVENTS</a>
+          <a href="#/">SERMONS</a>
+          <a href="#/">MINISTRIES</a>
         </nav>
-      </div> */}
+      </div>
       <div className="main-nav">
-        <div className="brand">KRISHNA <span className="sub">MEGA TEMPLE</span></div>
+        <div className="brand">
+          <span className="brand-icon">🕉️</span>
+          KRISHNA <span className="sub">MEGA TEMPLE</span>
+        </div>
         <nav className="menu">
-          <a href="#/">Home</a>
-          {/* <a href="#/about">About</a> */}
-          <a href="#/events">Events</a>
-          {/* <a href="#/donation">Donation</a> */}
-          <a href="#/contact">Contact</a>
+          <a href="#/">HOME</a>
+          <a href="#/events">EVENTS</a>
+          <a href="#/contact">CONTACT US</a>
+          <a href="#/" className="btn-donate">ONLINE</a>
         </nav>
       </div>
     </header>
