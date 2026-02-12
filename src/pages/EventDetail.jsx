@@ -106,7 +106,7 @@ export default function EventDetail() {
             <strong>Jai Shri Ram 🚩🙏</strong>
           </p>
 
-          <a className="btn primary" href="#/contact">Register Now</a>
+          <a className="btn primary" href="#/payment">Register Now</a>
         </div>
 
         <aside className="event-detail-sidebar">
