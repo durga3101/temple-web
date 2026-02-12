@@ -23,9 +23,9 @@ const sampleEvents = [
     description: 'Begin the sacred celebrations with Ganapati Puja and purification rituals. This auspicious ceremony marks the beginning of Maha Shivaratri festivities with traditional Vedic chanting and offerings to Lord Ganesha for the removal of obstacles.',
     author: 'Temple Committee',
     category: 'Maha Shivaratri',
-    date: 'March 14, 2026',
+    date: 'Feb 14, 2026',
     time: '9:00 AM',
-    local: '/assets/events/event-1.jpg',
+    local: '/assets/photos/ganesh-1.jpeg',
     unsplash: 'https://source.unsplash.com/800x600/?ganesha,prayer'
   },
   {
@@ -34,9 +34,9 @@ const sampleEvents = [
     description: 'Seek divine blessings through the powerful Rudra Homam on Maha Shivaratri. Sacred fire ceremony performed with Rudra mantras to invoke Lord Shiva\'s grace and blessings for peace, prosperity, and spiritual upliftment.',
     author: 'Temple Committee',
     category: 'Maha Shivaratri',
-    date: 'March 14, 2026',
+    date: 'Feb 14, 2026',
     time: '10:00 AM',
-    local: '/assets/events/event-2.jpg',
+    local: '/assets/photos/siva.jpeg',
     unsplash: 'https://source.unsplash.com/800x600/?fire,ritual,shiva'
   },
   {
@@ -45,9 +45,9 @@ const sampleEvents = [
     description: 'Early morning homam invoking Lord Ganesha\'s grace. This sacred ritual performed during the auspicious brahma muhurta brings divine blessings and removes obstacles from the spiritual path.',
     author: 'Temple Committee',
     category: 'Maha Shivaratri',
-    date: 'March 15, 2026',
-    time: '3:30 AM – 4:30 AM',
-    local: '/assets/events/event-3.jpg',
+    date: 'Feb 14, 2026',
+    time: '9:00 AM',
+    local: '/assets/photos/Ganeshji.jpeg',
     unsplash: 'https://source.unsplash.com/800x600/?ganesha,homam'
   },
   {
@@ -58,7 +58,7 @@ const sampleEvents = [
     category: 'Maha Shivaratri',
     date: 'March 15, 2026',
     time: 'From 5:00 AM',
-    local: '/assets/events/event-4.jpg',
+    local: '/assets/photos/siva2.jpeg',
     unsplash: 'https://source.unsplash.com/800x600/?abhishekam,shiva'
   },
   {
@@ -69,7 +69,7 @@ const sampleEvents = [
     category: 'Maha Shivaratri',
     date: 'March 15, 2026',
     time: 'Until 1:30 PM | 4:00 PM – 9:00 PM',
-    local: '/assets/events/event-5.jpg',
+    local: '/assets/photos/siva-3.jpeg',
     unsplash: 'https://source.unsplash.com/800x600/?temple,darshan'
   },
   {
@@ -79,8 +79,8 @@ const sampleEvents = [
     author: 'Temple Committee',
     category: 'Maha Shivaratri',
     date: 'March 15, 2026',
-    time: '11:30 PM – 12:30 AM',
-    local: '/assets/events/event-6.jpg',
+    time: 'Until 11:30 PM',
+    local: '/assets/photos/siva-4.jpeg',
     unsplash: 'https://source.unsplash.com/800x600/?shivalingam,night'
   },
   {
@@ -91,7 +91,7 @@ const sampleEvents = [
     category: 'Special Ceremony',
     date: 'March 16, 2026',
     time: 'From 10:30 AM',
-    local: '/assets/events/event-7.jpg',
+    local: '/assets/photos/siva-5.jpeg',
     unsplash: 'https://source.unsplash.com/800x600/?temple,marriage,ceremony'
   }
 ].map((event) => ({
