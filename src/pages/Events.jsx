@@ -15,106 +15,84 @@ const queries = [
   'hindu,celebration'
 ]
 
-// Events from Maha Shivaratri celebration poster (Feb 14-16, 2026)
+// Featured Events - Maha Shivaratri Celebration (March 14-16, 2026)
 const sampleEvents = [
   {
     id: 1,
-    title: 'Sri Chakrarchana Snanam',
-    description: 'Grand Sri Chakrarchana Snanam ceremony with participation of devotees. Special prayers and rituals will be conducted with traditional Vedic chanting. Over 2500 devotees expected to participate in this sacred event.',
+    title: '🔱 Ganapati Puja & Punyahavachanam',
+    description: 'Begin the sacred celebrations with Ganapati Puja and purification rituals. This auspicious ceremony marks the beginning of Maha Shivaratri festivities with traditional Vedic chanting and offerings to Lord Ganesha for the removal of obstacles.',
     author: 'Temple Committee',
-    category: 'Religious Ceremony',
-    date: 'February 14, 2026',
-    time: 'Morning',
+    category: 'Maha Shivaratri',
+    date: 'March 14, 2026',
+    time: '9:00 AM',
     local: '/assets/events/event-1.jpg',
-    unsplash: 'https://source.unsplash.com/800x600/?hindu,prayer'
+    unsplash: 'https://source.unsplash.com/800x600/?ganesha,prayer'
   },
   {
     id: 2,
-    title: 'Maha Shivaratri - Swamiji Visit',
-    description: 'Special visit by revered Swamiji on Maha Shivaratri. Divine darshan starting at 3:00 PM followed by spiritual discourse at 4:00 PM. Devotees can receive blessings and participate in the sacred ceremonies.',
+    title: '🔥 Maha Shivaratri Rudra Homam',
+    description: 'Seek divine blessings through the powerful Rudra Homam on Maha Shivaratri. Sacred fire ceremony performed with Rudra mantras to invoke Lord Shiva\'s grace and blessings for peace, prosperity, and spiritual upliftment.',
     author: 'Temple Committee',
     category: 'Maha Shivaratri',
-    date: 'February 15, 2026',
-    time: '3:00 PM - 4:00 PM',
+    date: 'March 14, 2026',
+    time: '10:00 AM',
     local: '/assets/events/event-2.jpg',
-    unsplash: 'https://source.unsplash.com/800x600/?shiva,shivaratri'
+    unsplash: 'https://source.unsplash.com/800x600/?fire,ritual,shiva'
   },
   {
     id: 3,
-    title: 'Grama Yatram (Village Procession)',
-    description: 'Traditional village procession for Maha Shivaratri starting at 3:00 PM. Join the grand procession with devotional music, bhajans, and kirtan. Three hours of divine celebration with community participation. Registration: ₹1100/-',
+    title: '🌅 Ganapati Homam',
+    description: 'Early morning homam invoking Lord Ganesha\'s grace. This sacred ritual performed during the auspicious brahma muhurta brings divine blessings and removes obstacles from the spiritual path.',
     author: 'Temple Committee',
     category: 'Maha Shivaratri',
-    date: 'February 15, 2026',
-    time: '3:00 PM',
+    date: 'March 15, 2026',
+    time: '3:30 AM – 4:30 AM',
     local: '/assets/events/event-3.jpg',
-    unsplash: 'https://source.unsplash.com/800x600/?procession,festival'
+    unsplash: 'https://source.unsplash.com/800x600/?ganesha,homam'
   },
   {
     id: 4,
-    title: 'Maha Shivaratri Evening Rituals',
-    description: 'Evening special puja and abhishekam ceremonies at 5:00 PM. Participate in sacred offerings, Rudra Abhishekam, and receive divine blessings. Special prasadam will be distributed to all devotees.',
+    title: '🪔 Abhishekam & Special Pujas',
+    description: 'Divine Abhishekam and special worship ceremonies throughout the day. Experience the divine energy as Lord Shiva is bathed with sacred offerings including milk, honey, ghee, and holy water accompanied by Vedic chants.',
     author: 'Temple Committee',
     category: 'Maha Shivaratri',
-    date: 'February 15, 2026',
-    time: '5:00 PM',
+    date: 'March 15, 2026',
+    time: 'From 5:00 AM',
     local: '/assets/events/event-4.jpg',
-    unsplash: 'https://source.unsplash.com/800x600/?temple,ritual'
+    unsplash: 'https://source.unsplash.com/800x600/?abhishekam,shiva'
   },
   {
     id: 5,
-    title: 'Maha Shivaratri Celebrations',
-    description: 'Complete day of Maha Shivaratri celebrations with continuous bhajans, kirtans, and special pujas. Experience divine energy through night-long devotional programs. Donation: ₹350/- per family for participation.',
+    title: '🌟 Free Swarna Darshan',
+    description: 'Continuous free darshan for all devotees throughout the day. Special timing: Until 1:30 PM and from 4:00 PM to 9:00 PM. All devotees are welcome to have blessed darshan of the deity adorned in golden attire without any charges.',
     author: 'Temple Committee',
     category: 'Maha Shivaratri',
-    date: 'February 15, 2026',
-    time: 'All Day',
+    date: 'March 15, 2026',
+    time: 'Until 1:30 PM | 4:00 PM – 9:00 PM',
     local: '/assets/events/event-5.jpg',
-    unsplash: 'https://source.unsplash.com/800x600/?devotion,celebration'
+    unsplash: 'https://source.unsplash.com/800x600/?temple,darshan'
   },
   {
     id: 6,
-    title: 'Special Puja & Homam',
-    description: 'Grand homam ceremony at 10:30 AM with Vedic rituals performed by learned priests. Sacred fire offerings with mantras for peace and prosperity. Special arrangements for 2500 devotees. Participation fee: ₹1100/-',
+    title: '🌙 Lingodbhava Kala Abhishekam',
+    description: 'Sacred midnight Abhishekam during Lingodbhava Kalam, the most auspicious time of Maha Shivaratri when Lord Shiva is believed to manifest in the form of a cosmic pillar of light. Experience this divine moment with special rituals.',
     author: 'Temple Committee',
-    category: 'Religious Ceremony',
-    date: 'February 16, 2026',
-    time: '10:30 AM',
+    category: 'Maha Shivaratri',
+    date: 'March 15, 2026',
+    time: '11:30 PM – 12:30 AM',
     local: '/assets/events/event-6.jpg',
-    unsplash: 'https://source.unsplash.com/800x600/?fire,ritual'
+    unsplash: 'https://source.unsplash.com/800x600/?shivalingam,night'
   },
   {
     id: 7,
-    title: 'Sansarga Bhajan Program',
-    description: 'Community bhajan gathering with devotional singing and spiritual discourse. Join fellow devotees in collective prayer and meditation. Light refreshments will be provided. Registration: ₹1100/-',
+    title: '🚩 Ishanya Devatas Kalyana Mahotsavam',
+    description: 'Grand celestial wedding ceremony of Ishanya Devatas. Witness the divine celebration as we perform the sacred marriage rituals with traditional ceremonies, music, and offerings. A blessed occasion for all devotees to participate in this auspicious event.',
     author: 'Temple Committee',
-    category: 'Devotional Program',
-    date: 'February 16, 2026',
-    time: 'Evening',
+    category: 'Special Ceremony',
+    date: 'March 16, 2026',
+    time: 'From 10:30 AM',
     local: '/assets/events/event-7.jpg',
-    unsplash: 'https://source.unsplash.com/800x600/?bhajan,devotional'
-  },
-  {
-    id: 8,
-    title: 'Shani Pradosham',
-    description: 'Special Shani Pradosham prayers at 11:15 AM. Receive blessings and participate in the sacred rituals dedicated to Lord Shani. Special abhishekam and offerings will be performed.',
-    author: 'Temple Committee',
-    category: 'Religious Ceremony',
-    date: 'February 16, 2026',
-    time: '11:15 AM',
-    local: '/assets/events/event-8.jpg',
-    unsplash: 'https://source.unsplash.com/800x600/?temple,prayer'
-  },
-  {
-    id: 9,
-    title: 'Grand Maha Prasadam',
-    description: 'Distribution of blessed prasadam to all devotees after the three-day Maha Shivaratri celebrations. Special arrangements for prasadam distribution with traditional offerings and sweets.',
-    author: 'Temple Committee',
-    category: 'Temple Event',
-    date: 'February 16, 2026',
-    time: 'After Ceremonies',
-    local: '/assets/events/event-9.jpg',
-    unsplash: 'https://source.unsplash.com/800x600/?prasadam,food'
+    unsplash: 'https://source.unsplash.com/800x600/?temple,marriage,ceremony'
   }
 ].map((event) => ({
   ...event,
