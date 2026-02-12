@@ -21,7 +21,7 @@ export default function Contact() {
             <div>
               <h4>Temple Address</h4>
               <p>Sita Rama Chandra Swami Devalayam</p>
-              <span>Kaakutiya Nagar, Ramachandrapuram</span>
+              <span>Kakatiya Nagar, Ramachandrapuram</span>
               <span>Sangareddya District, Telangana</span>
             </div>
           </div>
@@ -30,7 +30,7 @@ export default function Contact() {
             <div>
               <h4>Contact Number</h4>
               <p>For event registration and inquiries</p>
-              <span className="contact-phone">+91 ***** 456890</span>
+              <span className="contact-phone">+91 9849918520</span>
             </div>
           </div>
           <div className="contact-card light-card">

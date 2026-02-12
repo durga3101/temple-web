@@ -56,7 +56,7 @@ const sampleEvents = [
     description: 'Divine Abhishekam and special worship ceremonies throughout the day. Experience the divine energy as Lord Shiva is bathed with sacred offerings including milk, honey, ghee, and holy water accompanied by Vedic chants.',
     author: 'Temple Committee',
     category: 'Maha Shivaratri',
-    date: 'March 15, 2026',
+    date: 'Feb 15, 2026',
     time: 'From 5:00 AM',
     local: '/assets/photos/siva2.jpeg',
     unsplash: 'https://source.unsplash.com/800x600/?abhishekam,shiva'
@@ -67,7 +67,7 @@ const sampleEvents = [
     description: 'Continuous free darshan for all devotees throughout the day. Special timing: Until 1:30 PM and from 4:00 PM to 9:00 PM. All devotees are welcome to have blessed darshan of the deity adorned in golden attire without any charges.',
     author: 'Temple Committee',
     category: 'Maha Shivaratri',
-    date: 'March 15, 2026',
+    date: 'Feb 15, 2026',
     time: 'Until 1:30 PM | 4:00 PM – 9:00 PM',
     local: '/assets/photos/siva-3.jpeg',
     unsplash: 'https://source.unsplash.com/800x600/?temple,darshan'
@@ -78,7 +78,7 @@ const sampleEvents = [
     description: 'Sacred midnight Abhishekam during Lingodbhava Kalam, the most auspicious time of Maha Shivaratri when Lord Shiva is believed to manifest in the form of a cosmic pillar of light. Experience this divine moment with special rituals.',
     author: 'Temple Committee',
     category: 'Maha Shivaratri',
-    date: 'March 15, 2026',
+    date: 'Feb 15, 2026',
     time: 'Until 11:30 PM',
     local: '/assets/photos/siva-4.jpeg',
     unsplash: 'https://source.unsplash.com/800x600/?shivalingam,night'
@@ -89,7 +89,7 @@ const sampleEvents = [
     description: 'Grand celestial wedding ceremony of Ishanya Devatas. Witness the divine celebration as we perform the sacred marriage rituals with traditional ceremonies, music, and offerings. A blessed occasion for all devotees to participate in this auspicious event.',
     author: 'Temple Committee',
     category: 'Special Ceremony',
-    date: 'March 16, 2026',
+    date: 'Feb 16, 2026',
     time: 'From 10:30 AM',
     local: '/assets/photos/siva-5.jpeg',
     unsplash: 'https://source.unsplash.com/800x600/?temple,marriage,ceremony'
