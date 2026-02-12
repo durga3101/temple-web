@@ -1,5 +1,6 @@
 import React from 'react'
 import PageHero from '../components/PageHero'
+import SocialIcons from '../components/SocialIcons'
 
 export default function Contact() {
   return (
@@ -37,8 +38,11 @@ export default function Contact() {
             <div className="card-icon">📧</div>
             <div>
               <h4>Email Address</h4>
-              <p>Send us your queries anytime</p>
+              {/* <p>Send us your queries anytime</p> */}
               <span className="contact-email">sitaramachandradevalayam@gmail.com</span>
+              <div className="socials" style={{ marginTop: '12px' }}>
+                <SocialIcons />
+              </div>
             </div>
           </div>
           <div className="contact-card info-card">
