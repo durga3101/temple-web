@@ -7,12 +7,7 @@ export default function EventDetail() {
       <PageHero 
         title="Maha Shivaratri Grand Celebration"
         description="Join us for the grand three-day Maha Shivaratri celebration with special rituals, processions, and divine blessings."
-        // breadcrumbs={[
-        //   { label: 'Home', path: '#/' },
-        //   { label: 'Events', path: '#/events' },
-        //   { label: 'Maha Shivaratri' }
-        // ]}
-        backgroundImage="https://images.unsplash.com/photo-1500930288181-cd58fbc6b2cc?auto=format&fit=crop&w=1600&q=80"
+        // backgroundImage="/assets/photos/siva.jpeg"
       />
 
       <section className="container event-detail-info">
@@ -50,59 +45,64 @@ export default function EventDetail() {
             జై శ్రీ రామ్ 🚩 🔱 మహాశివరాత్రి ఉత్సవములు  🔱 
           </p> */}
 
+          <p>
+            Join us in this divine three-day celebration of Maha Shivaratri. Experience the spiritual energy through 
+            sacred fire ceremonies, divine Abhishekams, and the rare opportunity to witness Lingodbhava Kala. 
+            Free Sparsha Darshan available for all devotees. Don't miss the grand Kalyana Mahotsavam on the final day.
+          </p>
+
           <h3>Three Day Grand Celebration Schedule</h3>
           
           <div className="event-schedule">
             <div className="schedule-day">
-              <h4>🗓️ Day 1 - February 14, 2026 (Saturday)</h4>
+              <h4>🗓️ Day 1 - March 14, 2026 (Friday)</h4>
               <ul>
-                <li><strong>Muhurat Snanam:</strong> Maha Muhurat Abhishekam with 2500+ devotees participation</li>
-                <li>Traditional Vedic ceremonies and sacred rituals</li>
+                <li><strong>🔱 9:00 AM:</strong> Ganapati Puja & Punyahavachanam - Begin the sacred celebrations with Ganapati Puja and purification rituals</li>
+                <li><strong>🔥 10:00 AM:</strong> Maha Shivaratri Rudra Homam - Powerful fire ceremony with Rudra mantras to invoke Lord Shiva's grace and blessings</li>
               </ul>
             </div>
 
             <div className="schedule-day">
-              <h4>🗓️ Day 2 - February 15, 2026 (Sunday) - Maha Shivaratri</h4>
+              <h4>🗓️ Day 2 - March 15, 2026 (Saturday) - Maha Shivaratri</h4>
               <ul>
-                <li><strong>3:00 PM:</strong> Swamiji Arrival and Divine Darshan</li>
-                <li><strong>4:00 PM:</strong> Special Satsang and Blessings</li>
-                <li><strong>3:00 PM onwards:</strong> Grama Yatram (Village Procession) - 3 Hours Duration</li>
-                <li><strong>5:00 PM:</strong> Evening Special Puja and Abhishekam</li>
-                <li><strong>All Day:</strong> Continuous Bhajans and Kirtans</li>
+                <li><strong>🌅 3:30 AM – 4:30 AM:</strong> Ganapati Homam - Early morning homam during brahma muhurta invoking Lord Ganesha's grace</li>
+                <li><strong>🪔 From 5:00 AM:</strong> Abhishekam & Special Pujas - Divine Abhishekam with milk, honey, ghee, and holy water accompanied by Vedic chants</li>
+                <li><strong>🌟 Until 1:30 PM:</strong> Free Swarna Darshan - Continuous free darshan for all devotees</li>
+                <li><strong>🌟 4:00 PM – 9:00 PM:</strong> Free Swarna Darshan - Evening darshan session with deity in golden attire</li>
+                <li><strong>🌙 11:30 PM – 12:30 AM:</strong> Lingodbhava Kala Abhishekam - Sacred midnight Abhishekam during the most auspicious time when Lord Shiva manifests as cosmic pillar of light</li>
               </ul>
             </div>
 
             <div className="schedule-day">
-              <h4>🗓️ Day 3 - February 16, 2026 (Monday)</h4>
+              <h4>🗓️ Day 3 - March 16, 2026 (Sunday)</h4>
               <ul>
-                <li><strong>10:30 AM:</strong> Grand Homam with Vedic Rituals</li>
-                <li><strong>11:15 AM:</strong> Shani Pradosham Special Prayers</li>
-                <li><strong>Evening:</strong> Sansarga Bhajan Program and Prasadam Distribution</li>
+                <li><strong>🚩 From 10:30 AM:</strong> Ishanya Devatas Kalyana Mahotsavam - Grand celestial wedding ceremony with traditional music and offerings</li>
+                <li>Distribution of blessed prasadam to all devotees</li>
               </ul>
             </div>
           </div>
 
           <div className="event-detail-image" style={{ backgroundImage: 'url(/assets/poster.jpeg), url(https://images.unsplash.com/photo-1604608672325-f41a9b5e7e2f?auto=format&fit=crop&w=1200&q=80)' }} />
 
-          <h3>Registration Details</h3>
+          <h3>Featured Events Highlights</h3>
           <div className="registration-info">
             <ul>
-              <li><strong>Muhurat Snanam:</strong> 2500 slots available - First come, first served</li>
-              <li><strong>Grama Yatram:</strong> ₹1100/- (3 hours duration, includes all offerings)</li>
-              <li><strong>Family Participation:</strong> ₹350/- for day-long celebrations</li>
-              <li><strong>Homam & Special Puja:</strong> ₹1100/- (2500 participants capacity)</li>
-              <li><strong>Sansarga Bhajan:</strong> ₹1100/- per person</li>
+              <li><strong>Seva Contribution:</strong> ₹1116/- Devotees who contribute can participate in the Lingodbhava Kalam and Shivaratri Kalyanam.</li>
+              <li><strong>Rudra Homam:</strong> ₹2500/- (3 hours duration, includes all offerings)</li>
+              <li><strong>Kalyana Mahotsavam:</strong> ₹2500/- (500 participants capacity)</li>
+              <li><strong>Anna Prasada Seva:</strong> ₹5116/- Devotees who contribute can participate in the Lingodbhava Kalam and Shivaratri Kalyanam.</li>
             </ul>
           </div>
 
-          {/* <p>
-            మీ కుటుంబ సభ్యులతో  కలిసి ఆలయానికి విచ్చేసి, పవిత్ర మహాశివరాత్రి కార్యక్రమాలలో పాల్గొని శివ కృపను పొందండి.
-          </p> */}
-
+          <h3>📌 Note</h3>
           <p>
-            Join us in this divine celebration and receive blessings from our revered Swamiji. Experience the spiritual 
-            fervor of Maha Shivaratri with traditional rituals, sacred ceremonies, and community participation. Limited 
-            slots available for special programs - register early to secure your place.
+            On the day of Shivaratri and Kalyanotsavam, Anna Prasadam will be served to all devotees.
+          </p>
+          <p>
+            For further details, please contact the temple priest.
+          </p>
+          <p>
+            <strong>Jai Shri Ram 🚩🙏</strong>
           </p>
 
           <a className="btn primary" href="#/contact">Register Now</a>
@@ -123,8 +123,8 @@ export default function EventDetail() {
           <div className="sidebar-card">
             <h4>Important Notes</h4>
             <ul className="sidebar-notes">
-              <li>Limited slots for Muhurat Snanam</li>
-              <li>Pre-registration recommended</li>
+              <li>Free Swarna Darshan for all devotees</li>
+              <li>Early morning programs start at 3:30 AM</li>
               <li>Traditional attire preferred</li>
               <li>Prasadam will be distributed to all</li>
             </ul>
