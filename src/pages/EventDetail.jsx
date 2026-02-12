@@ -115,9 +115,30 @@ export default function EventDetail() {
             {/* <div className="phone">📞 +123 123 4567 890</div> */}
             <div className="phone">📧 sitaramachandradevalayam@gmail.com</div>
             <div className="socials">
-              <a href="#/" aria-label="WhatsApp">WA</a>
-              <a href="#/" aria-label="Instagram">In</a>
-              <a href="#/" aria-label="YouTube">Yt</a>
+              <a href="https://www.instagram.com/kakatiyanagarramalayam/" target="_blank" rel="noreferrer" aria-label="Instagram">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="24" height="24" rx="6" fill="url(#ig-gradient-detail)"/>
+                  <defs>
+                    <linearGradient id="ig-gradient-detail" x1="0" y1="24" x2="24" y2="0">
+                      <stop offset="0%" stopColor="#FD5949"/>
+                      <stop offset="50%" stopColor="#D6249F"/>
+                      <stop offset="100%" stopColor="#285AEB"/>
+                    </linearGradient>
+                  </defs>
+                  <rect x="7" y="7" width="10" height="10" rx="2" stroke="white" strokeWidth="1.5" fill="none"/>
+                  <circle cx="12" cy="12" r="2.5" stroke="white" strokeWidth="1.5" fill="none"/>
+                  <circle cx="17.5" cy="6.5" r="1" fill="white"/>
+                </svg>
+              </a>
+              <a href="https://wa.me/919849918520" target="_blank" rel="noreferrer" aria-label="WhatsApp" title="Scan QR code or click to open WhatsApp">
+                <img src="/assets/whatsApp.jpeg" alt="WhatsApp QR Code" width="32" height="32" style="display: block;"/>
+              </a>
+              <a href="https://www.youtube.com/@sitaramachandradevalayam" target="_blank" rel="noreferrer" aria-label="YouTube">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect width="24" height="24" rx="5" fill="#FF0000"/>
+                  <path d="M9 8L16 12L9 16V8Z" fill="white"/>
+                </svg>
+              </a>
             </div>
           </div>
           <div className="sidebar-card">
