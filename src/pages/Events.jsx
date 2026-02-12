@@ -19,23 +19,25 @@ const queries = [
 const sampleEvents = [
   {
     id: 1,
-    title: '🔱 Ganapati Puja & Punyahavachanam',
-    description: 'Begin the sacred celebrations with Ganapati Puja and purification rituals. This auspicious ceremony marks the beginning of Maha Shivaratri festivities with traditional Vedic chanting and offerings to Lord Ganesha for the removal of obstacles.',
+    title: '🔱 Ganapati Pooja',
+    description: 'Begin the sacred celebrations with Ganapati Puja and purification rituals. This auspicious ceremony marks the beginning of Maha Shivaratri festivities with traditional Vedic chanting and offerings to Lord Ganesha',
     author: 'Temple Committee',
     category: 'Maha Shivaratri',
     date: 'Feb 14, 2026',
     time: '9:00 AM',
+    price: 0,
     local: '/assets/photos/ganesh-1.jpeg',
     unsplash: 'https://source.unsplash.com/800x600/?ganesha,prayer'
   },
   {
     id: 2,
-    title: '🔥 Maha Shivaratri Rudra Homam',
+    title: '🔥 Maha Mruthyunjaya Homam',
     description: 'Seek divine blessings through the powerful Rudra Homam on Maha Shivaratri. Sacred fire ceremony performed with Rudra mantras to invoke Lord Shiva\'s grace and blessings for peace, prosperity, and spiritual upliftment.',
     author: 'Temple Committee',
     category: 'Maha Shivaratri',
     date: 'Feb 14, 2026',
     time: '10:00 AM',
+    price: 2500,
     local: '/assets/photos/siva.jpeg',
     unsplash: 'https://source.unsplash.com/800x600/?fire,ritual,shiva'
   },
@@ -47,6 +49,7 @@ const sampleEvents = [
     category: 'Maha Shivaratri',
     date: 'Feb 14, 2026',
     time: '9:00 AM',
+    price: 1116,
     local: '/assets/photos/Ganeshji.jpeg',
     unsplash: 'https://source.unsplash.com/800x600/?ganesha,homam'
   },
@@ -58,6 +61,7 @@ const sampleEvents = [
     category: 'Maha Shivaratri',
     date: 'Feb 15, 2026',
     time: 'From 5:00 AM',
+    price: 1116,
     local: '/assets/photos/siva2.jpeg',
     unsplash: 'https://source.unsplash.com/800x600/?abhishekam,shiva'
   },
@@ -69,6 +73,7 @@ const sampleEvents = [
     category: 'Maha Shivaratri',
     date: 'Feb 15, 2026',
     time: 'Until 1:30 PM | 4:00 PM – 9:00 PM',
+    price: 0,
     local: '/assets/photos/siva-3.jpeg',
     unsplash: 'https://source.unsplash.com/800x600/?temple,darshan'
   },
@@ -80,6 +85,7 @@ const sampleEvents = [
     category: 'Maha Shivaratri',
     date: 'Feb 15, 2026',
     time: 'Until 11:30 PM',
+    price: 1116,
     local: '/assets/photos/siva-4.jpeg',
     unsplash: 'https://source.unsplash.com/800x600/?shivalingam,night'
   },
@@ -91,6 +97,7 @@ const sampleEvents = [
     category: 'Special Ceremony',
     date: 'Feb 16, 2026',
     time: 'From 10:30 AM',
+    price: 2500,
     local: '/assets/photos/siva-5.jpeg',
     unsplash: 'https://source.unsplash.com/800x600/?temple,marriage,ceremony'
   }
@@ -135,6 +142,25 @@ function EventCard({ e }) {
               </>
             )}
           </div>
+        </div>
+        <div className="event-action" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '1rem', paddingTop: '1rem', borderTop: '1px solid #eee' }}>
+          <div className="event-price" style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#d53f41' }}>
+            {e.price === 0 ? 'FREE' : `₹${e.price}`}
+          </div>
+          <button 
+            className="btn primary" 
+            style={{ padding: '0.5rem 1.5rem', fontSize: '0.9rem' }}
+            onClick={(event) => {
+              event.stopPropagation();
+              if (e.price === 0) {
+                alert('No registration required - this event is free!');
+              } else {
+                window.location.hash = '/payment';
+              }
+            }}
+          >
+            {e.price === 0 ? 'Free Entry' : 'Register'}
+          </button>
         </div>
       </div>
     </article>
