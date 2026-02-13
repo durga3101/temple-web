@@ -30,9 +30,9 @@ export default function Header() {
               target="_blank"
               rel="noreferrer"
             >
-              LIVE STREAM
+              Live Stream
             </a>
-          {/* <a href="#/" className="btn-donate">LIVE</a> */}
+          <a href="#/payment" className="btn-donate">Donations</a>
         </nav>
       </div>
     </header>

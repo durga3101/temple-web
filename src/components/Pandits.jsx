@@ -27,6 +27,7 @@ const pandits = [
     name: 'Pandit Raghavendra', 
     role: 'PUJA ACHARYA',
     // image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=400&q=80'
+    local: '/assets/pandits/pandit_raghav.jpeg',
     image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80'
   }
 ]

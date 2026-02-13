@@ -37,7 +37,7 @@ function DonationCard({ cause }) {
       </div>
       <div className="donation-content">
         <h4>
-          <a href="#/donate">{cause.title}</a>
+          <a href="#/payment">{cause.title}</a>
         </h4>
         <p>{cause.description}</p>
         <div className="donation-progress-info">
@@ -49,7 +49,7 @@ function DonationCard({ cause }) {
             <span className="donation-percentage">{percentage}%</span>
           </div>
         </div>
-        <a className="btn primary donation-btn" href="#/donate">DONATE NOW</a>
+        <a className="btn primary donation-btn" href="#/payment">DONATE NOW</a>
       </div>
     </article>
   )
