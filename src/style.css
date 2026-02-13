@@ -532,7 +532,7 @@
 @media (max-width: 640px) {
   .payment-tabs { flex-direction:column }
   .payment-tab { text-align:center }
-  .amount-section { padding:24px 20px }
+  .amount-section { display: none }
   .amount-icon { width:60px; height:60px; font-size:36px }
   .amount-selection { flex-direction:column }
   .amount-btn, .amount-input { width:100% }

@@ -62,7 +62,7 @@ export default function Payment() {
                     checked={paymentMethod === 'default-checked'}
                     onChange={(e) => setPaymentMethod(e.target.value)}
                   />
-                  <span>Default checked radio</span>
+                  <span>UPI</span>
                 </label>
                 <label className="payment-method-option">
                   <input
@@ -72,7 +72,7 @@ export default function Payment() {
                     checked={paymentMethod === 'default'}
                     onChange={(e) => setPaymentMethod(e.target.value)}
                   />
-                  <span>Default radio</span>
+                  <span>Cards</span>
                 </label>
               </div>
             </div>
@@ -100,9 +100,9 @@ export default function Payment() {
                     <input placeholder="Pooja Name" />
                   </label>
                 </div>
-                <label className="field full">
+                {/* <label className="field full">
                   <textarea rows="6" placeholder="Write a Messsage" />
-                </label>
+                </label> */}
                 <button className="btn primary submit-btn" type="submit">
                   <span>Submit</span>
                   <span className="btn-icon">→</span>
