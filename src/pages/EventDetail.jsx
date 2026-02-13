@@ -68,8 +68,8 @@ export default function EventDetail() {
               <ul>
                 <li><strong>🌅 3:30 AM – 4:30 AM:</strong> Ganapati Homam - Early morning homam during brahma muhurta invoking Lord Ganesha's grace</li>
                 <li><strong>🪔 From 5:00 AM:</strong> Abhishekam & Special Pujas - Divine Abhishekam with milk, honey, ghee, and holy water accompanied by Vedic chants</li>
-                <li><strong>🌟 Until 1:30 PM:</strong> Free Swarna Darshan - Continuous free darshan for all devotees</li>
-                <li><strong>🌟 4:00 PM – 9:00 PM:</strong> Free Swarna Darshan - Evening darshan session with deity in golden attire</li>
+                <li><strong>🌟 Until 1:30 PM:</strong> Free Sparsha Darshan - Continuous free darshan for all devotees</li>
+                <li><strong>🌟 4:00 PM – 9:00 PM:</strong> Free Sparsha Darshan - Evening darshan session with deity in golden attire</li>
                 <li><strong>🌙 11:30 PM – 12:30 AM:</strong> Lingodbhava Kala Abhishekam - Sacred midnight Abhishekam during the most auspicious time when Lord Shiva manifests as cosmic pillar of light</li>
               </ul>
             </div>
@@ -122,7 +122,7 @@ export default function EventDetail() {
           <div className="sidebar-card">
             <h4>Important Notes</h4>
             <ul className="sidebar-notes">
-              <li>Free Swarna Darshan for all devotees</li>
+              <li>Free Sparsha Darshan for all devotees</li>
               <li>Early morning programs start at 3:30 AM</li>
               <li>Traditional attire preferred</li>
               <li>Prasadam will be distributed to all</li>

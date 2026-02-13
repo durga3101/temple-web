@@ -5,6 +5,7 @@ const pandits = [
     id: 1, 
     name: 'Chandra Shekhar Joshe', 
     role: 'HEAD PRIEST',
+    phone: '+91 98499 18520',
     local: '/assets/pandits/pandit_shekar.jpeg',
     image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80'
   },
@@ -12,6 +13,7 @@ const pandits = [
     id: 2, 
     name: 'Chidvilas Joshe', 
     role: 'VEDIC SCHOLAR',
+    phone: '+91 9000603374',
     local: '/assets/pandits/pandit_vilas.jpeg',
     image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=400&q=80'
   },
@@ -19,6 +21,7 @@ const pandits = [
     id: 3, 
     name: 'Pandit Thrived', 
     role: 'TEMPLE PRIEST',
+    phone: '+91 7799443495',
     local: '/assets/pandits/pandit_thrived.jpeg',
     image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80'
   },
@@ -26,6 +29,7 @@ const pandits = [
     id: 4, 
     name: 'Pandit Raghavendra', 
     role: 'PUJA ACHARYA',
+    phone: '+91 75500*****',
     // image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=400&q=80'
     local: '/assets/pandits/pandit_raghav.jpeg',
     image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80'
@@ -56,6 +60,7 @@ export default function Pandits() {
                 <h4>
                   <a href="#/volunteer">{pandit.name}</a>
                 </h4>
+                <a href={`tel:${pandit.phone}`} className="volunteer-phone">{pandit.phone}</a>
               </div>
             </article>
           ))}

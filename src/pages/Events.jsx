@@ -67,7 +67,7 @@ const sampleEvents = [
   },
   {
     id: 5,
-    title: '🌟 Free Swarna Darshan',
+    title: '🌟 Free Sparsha Darshan',
     description: 'Continuous free darshan for all devotees throughout the day. Special timing: Until 1:30 PM and from 4:00 PM to 9:00 PM. All devotees are welcome to have blessed darshan of the deity adorned in golden attire without any charges.',
     author: 'Temple Committee',
     category: 'Maha Shivaratri',

@@ -31,7 +31,9 @@ export default function Contact() {
             <div>
               <h4>Contact Number</h4>
               <p>For event registration and inquiries</p>
-              <span className="contact-phone">+91 9849918520</span>
+              <span className="contact-phone">+91 9849918520 </span>
+              <span className="contact-phone">+91 9000603374</span>
+              <span className="contact-phone">+91 7799443495</span>
             </div>
           </div>
           <div className="contact-card light-card">
