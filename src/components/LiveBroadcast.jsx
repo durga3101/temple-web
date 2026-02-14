@@ -1,7 +1,7 @@
 import React from 'react'
 
 const mainVideo = {
-  url: 'https://www.youtube.com/live/_mH1kFbLjKg',
+  url: 'https://www.youtube.com/watch?v=_mH1kFbLjKg',
   title: 'Maha Mrityunjaya Sahitha Rudra Homam',
   date: 'February 14, 2026',
   description:
