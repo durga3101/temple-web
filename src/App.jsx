@@ -19,7 +19,26 @@ export default function App() {
   const [route, setRoute] = useState(() => (window.location.hash || '#/').replace('#', ''))
 
   useEffect(() => {
-    const onHash = () => setRoute((window.location.hash || '#/').replace('#', ''))
+    const onHash = () => {
+      const hash = (window.location.hash || '#/').replace('#', '')
+      
+      // Check if it's an anchor link (element ID on home page)
+      if (hash && hash !== '/' && !hash.startsWith('/')) {
+        // This is an anchor link, set route to home and scroll to element
+        setRoute('/')
+        setTimeout(() => {
+          const element = document.getElementById(hash)
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+          }
+        }, 100)
+      } else {
+        // Normal route
+        setRoute(hash)
+      }
+    }
+    
+    onHash() // Handle initial load
     window.addEventListener('hashchange', onHash)
     return () => window.removeEventListener('hashchange', onHash)
   }, [])

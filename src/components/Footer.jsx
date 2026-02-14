@@ -3,7 +3,7 @@ import SocialIcons from './SocialIcons'
 
 const infoLinks = [
   { label: 'Deities', path: '#/' },
-  { label: 'Live Stream', path: 'https://www.youtube.com/@sitaramachandradevalayam' },
+  { label: 'Live Stream', path: '#live-broadcast' },
   { label: 'Poojas', path: '#/events' },
   { label: 'Pandits', path: '#/' }
 ]

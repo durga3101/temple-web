@@ -26,9 +26,7 @@ export default function Header() {
           <a href="#/contact">CONTACT US</a>
           <a
               className="btn-donate"
-              href="https://www.youtube.com/@sitaramachandradevalayam"
-              target="_blank"
-              rel="noreferrer"
+              href="#live-broadcast"
             >
               Live Stream
             </a>

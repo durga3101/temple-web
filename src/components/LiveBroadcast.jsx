@@ -42,7 +42,7 @@ function getThumb(url) {
 
 export default function LiveBroadcast() {
   return (
-    <section className="live-broadcast">
+    <section id="live-broadcast" className="live-broadcast">
       <div className="container">
         <h2>Our Live Broadcast</h2>
         <div className="live-feature">
