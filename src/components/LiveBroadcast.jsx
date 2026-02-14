@@ -1,11 +1,11 @@
 import React from 'react'
 
 const mainVideo = {
-  url: 'https://www.youtube.com/watch?v=B0wnk4aBj7s',
-  title: 'A historic moment! 🛕',
-  date: 'February 11, 2026',
+  url: 'https://www.youtube.com/live/_mH1kFbLjKg',
+  title: 'Maha Mrityunjaya Sahitha Rudra Homam',
+  date: 'February 14, 2026',
   description:
-    'A Divine foundation laying ceremony (Sankusthapana). The first stone is laid for the new Temple shrine 🙏. Experience the sacred energy of the Sankusthapana ceremony. '
+    'A highly powerful and sacred Vedic ritual dedicated to Lord Shiva in his forms as Mrityunjaya (the conqueror of death) and Rudra (the destroyer of evil/negativity)'
 }
 
 const thumbVideos = [
@@ -14,8 +14,8 @@ const thumbVideos = [
     title: 'Maha Shivaratri Events'
   },
   {
-    url: 'https://www.youtube.com/shorts/52wCqHJf8FQ',
-    title: 'Sacred Sparsha Darshan'
+    url: 'https://www.youtube.com/watch?v=B0wnk4aBj7s',
+    title: 'A historic moment! 🛕'
   },
   {
     url: 'https://www.youtube.com/shorts/YJOG99jTMYQ',
