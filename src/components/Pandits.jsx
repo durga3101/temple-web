@@ -38,7 +38,7 @@ const pandits = [
 
 export default function Pandits() {
   return (
-    <section className="volunteers-section">
+    <section id="pandits" className="volunteers-section">
       <div className="container">
         <div className="section-header">
           <h2>Our Pandits</h2>

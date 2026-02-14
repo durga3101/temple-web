@@ -2,10 +2,10 @@ import React from 'react'
 import SocialIcons from './SocialIcons'
 
 const infoLinks = [
-  { label: 'Deities', path: '#/' },
+  { label: 'Deities', path: '#deities' },
   { label: 'Live Stream', path: '#live-broadcast' },
   { label: 'Poojas', path: '#/events' },
-  { label: 'Pandits', path: '#/' }
+  { label: 'Pandits', path: '#pandits' }
 ]
 const otherLinks = [
   { label: 'Events', path: '#/events' },
@@ -14,9 +14,9 @@ const otherLinks = [
 ]
 
 const recentPosts = [
-  { id: 1, title: "All we've discovered by now", date: 'October 26, 2020' },
-  { id: 2, title: 'We Who Believe In God', date: 'October 28, 2020' },
-  { id: 3, title: 'Expecting new issued cases', date: 'October 29, 2020' }
+  { id: 1, title: "All we've discovered by now", date: 'October 26, 2023' },
+  { id: 2, title: 'We Who Believe In God', date: 'October 28, 2024' },
+  { id: 3, title: 'Laksha Deepotsavam', date: 'November 29, 2025' }
 ]
 
 export default function Footer() {

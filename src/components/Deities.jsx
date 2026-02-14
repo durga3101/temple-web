@@ -70,7 +70,7 @@ export default function Deities() {
     : deities.filter(d => d.category === activeCategory)
 
   return (
-    <section className="ministries-section">
+    <section id="deities" className="ministries-section">
       <div className="container">
         <div className="section-header">
           <h2>🕉️ Divine Deities </h2>
