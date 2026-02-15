@@ -14,7 +14,7 @@ const thumbVideos = [
     title: 'Maha Shivaratri Events'
   },
   {
-    url: 'https://www.youtube.com/watch?v=B0wnk4aBj7s',
+    url: 'https://www.youtube.com/shorts/cw7nIbASZWU',
     title: 'A historic moment! 🛕'
   },
   {
@@ -22,8 +22,8 @@ const thumbVideos = [
     title: 'Rudra Homam Highlights'
   },
   {
-    url: 'https://www.youtube.com/shorts/_9U28mDn7pk',
-    title: 'Deepotsavam Celebration'
+    url: 'https://www.youtube.com/shorts/_2eI9QOsaU8',
+    title: 'Maha Shivaratri Events - 2026'
   }
 ]
 
