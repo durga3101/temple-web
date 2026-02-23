@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import PageHero from '../components/PageHero'
+import { filterCategories } from '../utils/filterCategories'
 
 const queries = [
   'temple,pooja',
@@ -12,16 +13,6 @@ const queries = [
   'worship,temple',
   'hindu,puja',
   'vedic,ritual'
-]
-
-const filterCategories = [
-  { id: 'all', label: 'All Deities' },
-  { id: 'sita-rama', label: 'Sri Sita Rama' },
-  { id: 'shiva', label: 'Lord Shiva' },
-  { id: 'hanuman', label: 'Lord Hanuman' },
-  { id: 'ganesha', label: 'Lord Ganesha' },
-  { id: 'goddess', label: 'Goddess' },
-  { id: 'navagraha', label: 'Nava Grahas' },
 ]
 
 // Sample Poojas
@@ -110,7 +101,7 @@ const samplePoojas = [
     description: 'Comprehensive worship of Sani Graha deities to mitigate doshas and bring harmony in life. This powerful pooja helps overcome obstacles caused by Shani Graha and brings peace and prosperity.',
     author: 'Temple Committee',
     category: 'Remedial Pooja',
-    deity: 'navagraha',
+    deity: 'grahas',
     date: 'Flexible',
     time: '8:00 AM',
     price: 516,
@@ -149,7 +140,7 @@ const samplePoojas = [
     description: 'Comprehensive worship of nine planetary deities to mitigate doshas and bring harmony in life. This powerful pooja helps overcome obstacles caused by unfavorable planetary positions and brings peace and prosperity.',
     author: 'Temple Committee',
     category: 'Remedial Pooja',
-    deity: 'navagraha',
+    deity: 'grahas',
     date: 'Flexible',
     time: '8:00 AM',
     price: 516,
@@ -247,9 +238,38 @@ function PoojaCard({ pooja }) {
 export default function Poojas() {
   const [activeCategory, setActiveCategory] = useState('all')
 
+  // Read category from URL parameter
+  useEffect(() => {
+    const updateCategoryFromURL = () => {
+      const hash = window.location.hash
+      const urlParams = new URLSearchParams(hash.split('?')[1])
+      const category = urlParams.get('category')
+      
+      if (category && filterCategories.some(cat => cat.id === category)) {
+        setActiveCategory(category)
+      } else if (!category) {
+        setActiveCategory('all')
+      }
+    }
+
+    updateCategoryFromURL()
+    
+    // Listen for hash changes
+    window.addEventListener('hashchange', updateCategoryFromURL)
+    return () => window.removeEventListener('hashchange', updateCategoryFromURL)
+  }, [])
+
   const filteredPoojas = activeCategory === 'all' 
     ? samplePoojas 
     : samplePoojas.filter(pooja => pooja.deity === activeCategory)
+
+  const handleFilterClick = (categoryId) => {
+    if (categoryId === 'all') {
+      window.location.hash = '/poojas'
+    } else {
+      window.location.hash = `/poojas?category=${categoryId}`
+    }
+  }
 
   return (
     <div className="events-page">
@@ -263,7 +283,7 @@ export default function Poojas() {
             <button
               key={cat.id}
               className={`filter-btn ${activeCategory === cat.id ? 'active' : ''}`}
-              onClick={() => setActiveCategory(cat.id)}
+              onClick={() => handleFilterClick(cat.id)}
             >
               {cat.label}
             </button>

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { filterCategories } from '../utils/filterCategories'
 
 const deities = [
   { 
@@ -19,7 +20,7 @@ const deities = [
     id: 3, 
     title: 'Goddess Durga', 
     description: 'The divine mother, symbol of strength and protection.',
-    category: 'goddesses', 
+    category: 'goddess', 
     image: '/assets/photos/maa-1.jpeg' 
   },
   { 
@@ -52,15 +53,7 @@ const deities = [
 //   }
 ]
 
-const categories = [
-  { id: 'all', label: 'All' },
-  { id: 'sita-rama', label: 'Sri Sita Rama' },
-  { id: 'shiva', label: 'Lord Shiva' },
-  { id: 'hanuman', label: 'Lord Hanuman' },
-  { id: 'ganesha', label: 'Lord Ganesha' },
-  { id: 'grahas', label: 'Nava Grahas' },
-  { id: 'grahas', label: 'Shani Graha' },
-]
+
 
 export default function Deities() {
   const [activeCategory, setActiveCategory] = useState('all')
@@ -77,7 +70,7 @@ export default function Deities() {
         </div>
         
         <div className="ministries-filter">
-          {categories.map(cat => (
+          {filterCategories.map(cat => (
             <button
               key={cat.id}
               className={`filter-btn ${activeCategory === cat.id ? 'active' : ''}`}
@@ -93,7 +86,7 @@ export default function Deities() {
             <article 
               key={deity.id} 
               className="ministry-card"
-              onClick={() => setActiveCategory(deity.category)}
+              onClick={() => window.location.hash = `/poojas?category=${deity.category}`}
               style={{ cursor: 'pointer' }}
             >
               <div className="ministry-image">

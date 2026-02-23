@@ -18,7 +18,10 @@ import Poojas from './pages/Poojas'
 import PoojaDetail from './pages/PoojaDetail'
 
 export default function App() {
-  const [route, setRoute] = useState(() => (window.location.hash || '#/').replace('#', ''))
+  const [route, setRoute] = useState(() => {
+    const hash = (window.location.hash || '#/').replace('#', '')
+    return hash.split('?')[0] // Extract base route without query params
+  })
 
   useEffect(() => {
     const onHash = () => {
@@ -35,8 +38,9 @@ export default function App() {
           }
         }, 100)
       } else {
-        // Normal route
-        setRoute(hash)
+        // Normal route - extract base route without query params
+        const baseRoute = hash.split('?')[0]
+        setRoute(baseRoute)
       }
     }
     
