@@ -16,6 +16,7 @@ import Contact from './pages/Contact'
 import Payment from './pages/Payment'
 import Poojas from './pages/Poojas'
 import PoojaDetail from './pages/PoojaDetail'
+import { PoojaProvider } from './context/PoojaContext'
 
 export default function App() {
   const [route, setRoute] = useState(() => {
@@ -50,6 +51,7 @@ export default function App() {
   }, [])
 
   return (
+    <PoojaProvider>
     <div className="app-root">
       <Header />
       <main>
@@ -78,5 +80,6 @@ export default function App() {
       </main>
       <Footer />
     </div>
+    </PoojaProvider>
   )
 }
