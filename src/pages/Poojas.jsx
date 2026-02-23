@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PageHero from '../components/PageHero'
 
 const queries = [
@@ -14,6 +14,16 @@ const queries = [
   'vedic,ritual'
 ]
 
+const filterCategories = [
+  { id: 'all', label: 'All Deities' },
+  { id: 'sita-rama', label: 'Sri Sita Rama' },
+  { id: 'shiva', label: 'Lord Shiva' },
+  { id: 'hanuman', label: 'Lord Hanuman' },
+  { id: 'ganesha', label: 'Lord Ganesha' },
+  { id: 'goddess', label: 'Goddess' },
+  { id: 'navagraha', label: 'Nava Grahas' },
+]
+
 // Sample Poojas
 const samplePoojas = [
   {
@@ -22,6 +32,7 @@ const samplePoojas = [
     description: 'Satyanarayana Pooja is one of the most popular Hindu poojas performed to seek blessings of Lord Vishnu. This sacred ritual brings peace, prosperity, and fulfillment of wishes. Performed with devotion and followed by Prasadam distribution.',
     author: 'Temple Committee',
     category: 'Monthly Pooja',
+    deity: 'sita-rama',
     date: 'Every Purnima',
     time: '10:00 AM',
     price: 1116,
@@ -34,6 +45,7 @@ const samplePoojas = [
     description: 'Sacred bathing ceremony of Lord Shiva with milk, honey, ghee, and holy water while chanting Rudra mantras. This powerful ritual removes negativity and brings divine blessings for health, wealth, and spiritual growth.',
     author: 'Temple Committee',
     category: 'Weekly Pooja',
+    deity: 'shiva',
     date: 'Every Monday',
     time: '7:00 AM',
     price: 316,
@@ -46,6 +58,7 @@ const samplePoojas = [
     description: 'Devotional recitation of the sacred Hanuman pooja by experienced priests. Brings courage, strength, and divine protection. Especially beneficial for overcoming difficulties and gaining Lord Hanuman\'s blessings.',
     author: 'Temple Committee',
     category: 'Weekly Pooja',
+    deity: 'hanuman',
     date: 'Every Tuesday & Saturday',
     time: '7:00 AM',
     price: 316,
@@ -58,6 +71,7 @@ const samplePoojas = [
     description: 'Powerful fire ceremony dedicated to Lord Ganesha to remove obstacles and bring new beginnings. Ideal for starting new ventures, education, and overcoming challenges in life. Performed with sacred fire and Vedic mantras.',
     author: 'Temple Committee',
     category: 'Weekly Pooja',
+    deity: 'ganesha',
     date: 'Every Wednesday',
     time: 'Flexible',
     price: 316,
@@ -70,6 +84,7 @@ const samplePoojas = [
     description: 'Invoke blessings of Goddess Lakshmi and Durga for wealth, prosperity, and abundance. This auspicious pooja is performed with traditional rituals and offerings to bring fortune and success to your family and business.',
     author: 'Temple Committee',
     category: 'Friday Special',
+    deity: 'goddess',
     date: 'Every Friday',
     time: '7:00 PM',
     price: 316,
@@ -82,6 +97,7 @@ const samplePoojas = [
     description: 'Invoke blessings of Goddess Lakshmi and Durga for wealth, prosperity, and abundance. This auspicious pooja is performed with traditional rituals and offerings to bring fortune and success to your family and business.',
     author: 'Temple Committee',
     category: 'Saturday Special',
+    deity: 'sita-rama',
     date: 'Every Saturday',
     time: '7:00 AM',
     price: 516,
@@ -94,6 +110,7 @@ const samplePoojas = [
     description: 'Comprehensive worship of Sani Graha deities to mitigate doshas and bring harmony in life. This powerful pooja helps overcome obstacles caused by Shani Graha and brings peace and prosperity.',
     author: 'Temple Committee',
     category: 'Remedial Pooja',
+    deity: 'navagraha',
     date: 'Flexible',
     time: '8:00 AM',
     price: 516,
@@ -106,6 +123,7 @@ const samplePoojas = [
     description: 'Recitation of 700 verses from Devi Mahatmyam in praise of Goddess Durga. This powerful scripture reading invokes the divine mother\'s blessings for courage, strength, and victory over all obstacles and negativity.',
     author: 'Temple Committee',
     category: 'Goddess Worship',
+    deity: 'goddess',
     date: 'Friday',
     time: '10:00 AM',
     price: 316,
@@ -118,6 +136,7 @@ const samplePoojas = [
     description: 'Chanting of the powerful Maha Mrityunjaya mantra 108/1008 times for health, longevity, and protection. This sacred ritual is performed by experienced priests to invoke Lord Shiva\'s grace for healing and well-being.',
     author: 'Temple Committee',
     category: 'Health & Healing',
+    deity: 'shiva',
     date: 'On Request',
     time: 'Flexible',
     price: 2501,
@@ -130,6 +149,7 @@ const samplePoojas = [
     description: 'Comprehensive worship of nine planetary deities to mitigate doshas and bring harmony in life. This powerful pooja helps overcome obstacles caused by unfavorable planetary positions and brings peace and prosperity.',
     author: 'Temple Committee',
     category: 'Remedial Pooja',
+    deity: 'navagraha',
     date: 'Flexible',
     time: '8:00 AM',
     price: 516,
@@ -142,6 +162,7 @@ const samplePoojas = [
     description: 'Daily archana performed for an entire month for all deities in the temple. This comprehensive worship service includes daily offerings, abhishekam, and prayers to all divine presences, bringing continuous blessings and divine grace to you and your family throughout the month.',
     author: 'Temple Committee',
     category: 'Monthly Archana',
+    deity: 'all',
     date: 'Ongoing',
     time: 'Daily Prayers',
     price: 516,
@@ -154,6 +175,7 @@ const samplePoojas = [
     description: 'Daily archana performed for an entire year for all deities in the temple. This sacred annual service ensures continuous divine blessings, protection, and prosperity throughout the year. Perfect for devotees seeking sustained spiritual connection and divine grace for their family.',
     author: 'Temple Committee',
     category: 'Yearly Archana',
+    deity: 'all',
     date: 'Annual Service',
     time: 'Daily Prayers',
     price: 3116,
@@ -223,6 +245,12 @@ function PoojaCard({ pooja }) {
 }
 
 export default function Poojas() {
+  const [activeCategory, setActiveCategory] = useState('all')
+
+  const filteredPoojas = activeCategory === 'all' 
+    ? samplePoojas 
+    : samplePoojas.filter(pooja => pooja.deity === activeCategory)
+
   return (
     <div className="events-page">
       <PageHero 
@@ -230,8 +258,20 @@ export default function Poojas() {
       />
 
       <main className="container events-listing">
+        <div className="ministries-filter">
+          {filterCategories.map(cat => (
+            <button
+              key={cat.id}
+              className={`filter-btn ${activeCategory === cat.id ? 'active' : ''}`}
+              onClick={() => setActiveCategory(cat.id)}
+            >
+              {cat.label}
+            </button>
+          ))}
+        </div>
+
         <div className="news-grid">
-          {samplePoojas.map((pooja) => (
+          {filteredPoojas.map((pooja) => (
             <PoojaCard key={pooja.id} pooja={pooja} />
           ))}
         </div>
