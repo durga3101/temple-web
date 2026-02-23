@@ -10,6 +10,30 @@ const CONTACT = {
   email: 'sitaramachandradevalayam@gmail.com',
 }
 
+const importantNotes = [
+  'Traditional attire preferred',
+  'Prasadam will be distributed to all',
+  'Please arrive 15 minutes before the time',
+  'Bring Desired flowers, fruits etc.. (optional)',
+];
+
+const bookingInfo = {
+    text: 'You can book your Pooja in advance by clicking the "Book Now" button below. Please provide your details including name, gotra (if known), and any specific sankalpa (wishes). Our priests will perform the ritual on your behalf at the sacred time.',
+    closingText: 'Jai Shri Ram 🚩 Om Namah Shivaya 🔱'
+  };
+
+const benefits= [
+    { title: 'Spiritual Growth', description: 'Enhances meditation, concentration, and spiritual awareness' },
+    { title: 'Health & Healing', description: 'Promotes physical and mental well-being, reduces stress' },
+    { title: 'Prosperity', description: 'Removes financial obstacles and brings material abundance' },
+    { title: 'Peace of Mind', description: 'Calms the mind and removes negative emotions' },
+    { title: 'Protection', description: 'Shields from negative energies and evil influences' },
+    { title: 'Karma Cleansing', description: 'Helps resolve past karma and ancestral issues' },
+    { title: 'Relationship Harmony', description: 'Brings peace and understanding in family relationships' },
+    { title: 'Success', description: 'Removes obstacles in career and personal endeavors' }
+  ];
+  
+
 export default function PoojaDetail() {
   const { selectedPooja, loading, error } = usePoojas()
 
@@ -43,17 +67,17 @@ export default function PoojaDetail() {
     mainTitle: d.mainTitle || selectedPooja.title,
     highlightText: d.highlightText || selectedPooja.description,
     introText: d.introText || '',
-    schedule: d.schedule ?? { icon: '📅', title: 'Schedule', subtitle: selectedPooja.category, detail: selectedPooja.date },
+    schedule: d.schedule ?? { icon: '📅', title: 'Schedule', subtitle: selectedPooja.category, detail: `${selectedPooja.date} ${selectedPooja.time ? `at ${selectedPooja.time}` : ''}` },
     location: d.location ?? { icon: '📍', title: 'Location', subtitle: 'Kakatiya Nagar, Ramachandrapuram', detail: 'Sangareddy District' },
     pricing: d.pricing ?? { icon: '💰', title: 'Pooja Contribution', subtitle: `₹${selectedPooja.price}/-`, detail: 'Includes all offerings & Prasadam' },
     procedures: d.procedures ?? [],
     images: d.images ?? { local: selectedPooja.local, fallback: '' },
-    benefits: d.benefits ?? [],
+    benefits: d.benefits && d.benefits.length > 0 ? d.benefits : benefits,
     packages: d.packages ?? [],
-    importantNotes: d.importantNotes ?? [],
+    importantNotes: d.importantNotes && d.importantNotes.length > 0 ? d.importantNotes : importantNotes,
     mantra: d.mantra ?? null,
     bestDays: d.bestDays ?? null,
-    bookingInfo: d.bookingInfo ?? { text: '', closingText: '' },
+    bookingInfo: d.bookingInfo && d.bookingInfo.length > 0 ? d.bookingInfo : bookingInfo,
     contact: CONTACT,
   }
 
@@ -156,17 +180,6 @@ export default function PoojaDetail() {
             </>
           )}
 
-          {pooja.importantNotes.length > 0 && (
-            <>
-              <h3>📌 Important Notes</h3>
-              <ul>
-                {pooja.importantNotes.map((note, idx) => (
-                  <li key={idx}>{note}</li>
-                ))}
-              </ul>
-            </>
-          )}
-
           {pooja.bookingInfo.text && (
             <>
               <h3>How to Book</h3>
@@ -189,6 +202,17 @@ export default function PoojaDetail() {
               <SocialIcons />
             </div>
           </div>
+
+          {pooja.importantNotes.length > 0 && (
+            <div className="sidebar-card">
+              <h4>📌 Important Notes</h4>
+              <ul className="sidebar-notes">
+                {pooja.importantNotes.map((note, idx) => (
+                  <li key={idx}>{note}</li>
+                ))}
+              </ul>
+            </div>
+          )}
 
           {pooja.mantra && (
             <div className="sidebar-card">
