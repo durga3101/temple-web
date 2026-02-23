@@ -14,6 +14,8 @@ import Events from './pages/Events'
 import EventDetail from './pages/EventDetail'
 import Contact from './pages/Contact'
 import Payment from './pages/Payment'
+import Poojas from './pages/Poojas'
+import PoojaDetail from './pages/PoojaDetail'
 
 export default function App() {
   const [route, setRoute] = useState(() => (window.location.hash || '#/').replace('#', ''))
@@ -65,6 +67,8 @@ export default function App() {
 
         {route === '/events' && <Events />}
         {route === '/event-detail' && <EventDetail />}
+        {route === '/poojas' && <Poojas />}
+        {route === '/pooja-detail' && <PoojaDetail />}
         {route === '/contact' && <Contact />}
         {route === '/payment' && <Payment />}
       </main>

@@ -22,7 +22,8 @@ export default function Header() {
         </div>
         <nav className="menu">
           <a href="#/">HOME</a>
-          <a href="#/events">EVENTS</a>
+          {/* <a href="#/events">EVENTS</a> */}
+          <a href="#/poojas">POOJAS & SEVAS</a>
           <a href="#/contact">CONTACT US</a>
           <a
               className="btn-donate"
