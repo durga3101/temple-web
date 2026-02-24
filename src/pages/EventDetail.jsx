@@ -17,8 +17,12 @@ const DEFAULT_NOTES = [
   'Please arrive 15 minutes before the scheduled time',
 ]
 
-export default function EventDetail() {
-  const { selectedEvent, loading, error } = useEvents()
+export default function EventDetail({ eventId }) {
+  const { events, loading, error } = useEvents()
+
+  const selectedEvent = events.find(
+    (e) => String(e.id) === String(eventId) || String(e.event_id) === String(eventId)
+  ) ?? null
 
   if (loading) {
     return <div style={{ textAlign: 'center', padding: '4rem', color: '#888' }}>Loading…</div>
@@ -31,7 +35,7 @@ export default function EventDetail() {
   if (!selectedEvent) {
     return (
       <div style={{ textAlign: 'center', padding: '4rem' }}>
-        <p>No event selected.</p>
+        <p>Event not found.</p>
         <a className="btn primary" href="#/events">← Back to Events</a>
       </div>
     )

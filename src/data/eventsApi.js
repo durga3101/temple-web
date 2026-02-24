@@ -34,7 +34,10 @@ export async function fetchEvents() {
     .filter((r) => r.title)
     .map((r) => ({
       id: toNumber(r.id),
+      event_id: r.event_id,
       title: r.title,
+      subtitle: r.subtitle,
+      benefits: r.benefits,
       description: r.description,
       category: r.category,
       date: r.date,

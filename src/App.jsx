@@ -20,29 +20,32 @@ import { PoojaProvider } from './context/PoojaContext'
 import { EventProvider } from './context/EventContext'
 
 export default function App() {
-  const [route, setRoute] = useState(() => {
-    const hash = (window.location.hash || '#/').replace('#', '')
-    return hash.split('?')[0] // Extract base route without query params
-  })
+  const [route,   setRoute]   = useState('/')
+  const [eventId, setEventId] = useState(null)
 
   useEffect(() => {
     const onHash = () => {
       const hash = (window.location.hash || '#/').replace('#', '')
-      
+      const base = hash.split('?')[0]
+
+      // Dynamic event route: #/event/:id
+      const eventMatch = base.match(/^\/event\/(.+)$/)
+      if (eventMatch) {
+        setEventId(eventMatch[1])
+        setRoute('/event-detail')
+        return
+      }
+
       // Check if it's an anchor link (element ID on home page)
       if (hash && hash !== '/' && !hash.startsWith('/')) {
-        // This is an anchor link, set route to home and scroll to element
         setRoute('/')
         setTimeout(() => {
           const element = document.getElementById(hash)
-          if (element) {
-            element.scrollIntoView({ behavior: 'smooth', block: 'start' })
-          }
+          if (element) element.scrollIntoView({ behavior: 'smooth', block: 'start' })
         }, 100)
       } else {
-        // Normal route - extract base route without query params
-        const baseRoute = hash.split('?')[0]
-        setRoute(baseRoute)
+        setEventId(null)
+        setRoute(base || '/')
       }
     }
     
@@ -74,7 +77,7 @@ export default function App() {
         )}
 
         {route === '/events' && <Events />}
-        {route === '/event-detail' && <EventDetail />}
+        {route === '/event-detail' && <EventDetail eventId={eventId} />}
         {route === '/poojas' && <Poojas />}
         {route === '/pooja-detail' && <PoojaDetail />}
         {route === '/contact' && <Contact />}

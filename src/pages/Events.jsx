@@ -5,11 +5,10 @@ import { useEvents } from '../context/EventContext'
 // Data is loaded from Google Sheets via EventContext → src/data/eventsApi.js
 // Sheet tabs: Events | EventDetails | EventSchedule
 
-function EventCard({ e, onSelect }) {
+function EventCard({ e }) {
   const handleCardClick = (evt) => {
     if (evt.target.tagName === 'A') return
-    onSelect(e.id)
-    window.location.hash = '/event-detail'
+    window.location.hash = `/event/${e.event_id || e.id}`
   }
 
   return (
@@ -22,13 +21,13 @@ function EventCard({ e, onSelect }) {
       <div className="news-content">
         <h3 className="news-title">
           <a
-            href="#/event-detail"
-            onClick={(evt) => { evt.stopPropagation(); onSelect(e.id) }}
+            href={`#/event/${e.event_id || e.id}`}
+            onClick={(evt) => evt.stopPropagation()}
           >
             {e.title}
           </a>
         </h3>
-        <p className="news-description">{e.description}</p>
+        <p className="news-description">{e.description} {e.benefits}</p>
         <div className="news-meta">
           <div className="news-author-section">
             <span className="author-label">By</span>
@@ -72,11 +71,11 @@ function EventCard({ e, onSelect }) {
 }
 
 export default function Events() {
-  const { events, loading, error, setSelectedEventId } = useEvents()
+  const { events, loading, error } = useEvents()
 
   return (
     <div className="events-page">
-      <PageHero title="Temple Events" />
+      <PageHero title={events.length ? events[0].event_id : "Temple Events"} />
 
       <main className="container events-listing">
         {loading && (
@@ -88,7 +87,7 @@ export default function Events() {
         {!loading && !error && (
           <div className="news-grid">
             {events.map((e) => (
-              <EventCard key={e.id} e={e} onSelect={setSelectedEventId} />
+              <EventCard key={e.id} e={e} />
             ))}
           </div>
         )}
