@@ -44,6 +44,13 @@ const deities = [
     category: 'grahas', 
     image: '/assets/photos/navagraha-1.webp' 
   },
+  { 
+    id: 7, 
+    title: 'Temple', 
+    description: 'The embodiment of dharma, devotion, and divine grace.',
+    category: 'temple', 
+    image: '/assets/photos/temple.jpg' 
+  },
 //   { 
 //     id: 7, 
 //     title: 'Shani Graha', 
