@@ -8,7 +8,7 @@ import { useEvents } from '../context/EventContext'
 function EventCard({ e }) {
   const handleCardClick = (evt) => {
     if (evt.target.tagName === 'A') return
-    window.location.hash = `/event/${e.event_id || e.id}`
+    window.location.hash = `/event-detail`
   }
 
   return (
@@ -21,7 +21,7 @@ function EventCard({ e }) {
       <div className="news-content">
         <h3 className="news-title">
           <a
-            href={`#/event/${e.event_id || e.id}`}
+            href={`/event-detail`}
             onClick={(evt) => evt.stopPropagation()}
           >
             {e.title}

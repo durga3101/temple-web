@@ -28,15 +28,24 @@ export default function App() {
       const hash = (window.location.hash || '#/').replace('#', '')
       const base = hash.split('?')[0]
 
-      // Dynamic event route: #/event/:id
+      // Dynamic event route: #/event/:slug  e.g. #/event/Vasantha%20Navaratri
       const eventMatch = base.match(/^\/event\/(.+)$/)
       if (eventMatch) {
-        setEventId(eventMatch[1])
+        setEventId(decodeURIComponent(eventMatch[1]))
         setRoute('/event-detail')
         return
       }
 
-      // Check if it's an anchor link (element ID on home page)
+      // Legacy route: #/event-detail?id=...  (id is optional)
+      if (base === '/event-detail') {
+        const params = new URLSearchParams(hash.includes('?') ? hash.slice(hash.indexOf('?')) : '')
+        const id = params.get('id')
+        setEventId(id ? decodeURIComponent(id) : null)
+        setRoute('/event-detail')
+        return
+      }
+
+      // Anchor link (element ID on home page)
       if (hash && hash !== '/' && !hash.startsWith('/')) {
         setRoute('/')
         setTimeout(() => {
@@ -77,7 +86,7 @@ export default function App() {
         )}
 
         {route === '/events' && <Events />}
-        {route === '/event-detail' && <EventDetail eventId={eventId} />}
+        {route === '/event-detail' && <EventDetail />}
         {route === '/poojas' && <Poojas />}
         {route === '/pooja-detail' && <PoojaDetail />}
         {route === '/contact' && <Contact />}
