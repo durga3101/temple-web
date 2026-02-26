@@ -1,14 +1,66 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import PageHero from '../components/PageHero'
 import SocialIcons from '../components/SocialIcons'
+import { fetchEventPageData } from '../data/eventsApi'
+
+const EVENT_ID = 'Vasantha Navaratri Utsavam 2026'
 
 export default function EventDetail() {
+  const [rows, setRows]       = useState([])
+  const [loading, setLoading] = useState(true)
+  const [error, setError]     = useState('')
+
+  useEffect(() => {
+    fetchEventPageData(EVENT_ID)
+      .then((data) => { console.log('[EventDetail] rows:', data); setRows(data) })
+      .catch((e) => setError(e?.message || 'Failed to load'))
+      .finally(() => setLoading(false))
+  }, [])
+
+  if (loading) return <div className="container" style={{ padding: '4rem', textAlign: 'center' }}>Loading event details…</div>
+  if (error)   return <div className="container" style={{ padding: '4rem', textAlign: 'center' }}>Error: {error}</div>
+  if (!rows.length) return <div className="container" style={{ padding: '4rem', textAlign: 'center' }}>No event data found for "{EVENT_ID}"</div>
+
+  const main = rows[0]
+
+  // Group rows by date for schedule sections. Split each date into daily and scheduled items
+  const byDateMap = {}
+  rows.forEach((r) => {
+    const key = r.date || 'Date TBA'
+    if (!byDateMap[key]) byDateMap[key] = []
+    byDateMap[key].push(r)
+  })
+
+  const isDaily = (item) => (item.category || '').toLowerCase().includes('daily')
+  const groupedByDate = Object.entries(byDateMap).map(([date, items]) => ({
+    date,
+    items,
+    dailyItems: items.filter(isDaily),
+    scheduledItems: items.filter((it) => !isDaily(it)),
+  }))
+
+  // Sections that contain at least one daily item
+  const dailySections = groupedByDate.filter((g) => g.dailyItems.length > 0)
+  // Sections that contain at least one non-daily (scheduled/featured) item
+  const scheduledSections = groupedByDate.filter((g) => g.scheduledItems.length > 0)
+
+  // Rows with a price → registration/featured events list
+  const registrationItems = rows.filter((r) => r.price > 0)
+
+  // First row that has an image
+  const imageRow = rows.find((r) => r.imageLocal || r.imageRemote)
+  const imageBg = imageRow
+    ? [
+        imageRow.imageLocal  ? `url(${imageRow.imageLocal})`  : '',
+        imageRow.imageRemote ? `url(${imageRow.imageRemote})` : '',
+      ].filter(Boolean).join(', ')
+    : ''
+
   return (
     <div className="event-detail-page">
-      <PageHero 
-        title="Maha Shivaratri Grand Celebration"
-        description="Join us for the grand three-day Maha Shivaratri celebration with special rituals, processions, and divine blessings."
-        // backgroundImage="/assets/photos/siva.jpeg"
+      <PageHero
+        title={main.event_id}
+        description={main.description}
       />
 
       <section className="container event-detail-info">
@@ -16,23 +68,23 @@ export default function EventDetail() {
           <div className="info-icon">📅</div>
           <div>
             <h4>Date &amp; Time</h4>
-            <p>Three Day Celebration</p>
-            <span>19-28 March, 2026</span>
+            <p>{main.subtitle}</p>
+            <span>{main.date}{main.time ? ` · ${main.time}` : ''}</span>
           </div>
         </article>
         <article className="info-card dark">
           <div className="info-icon">📍</div>
           <div>
             <h4>Location</h4>
-            <p>Kaakutiya Nagar, Ramachandrapuram</p>
-            <span>Sangareddya District</span>
+            <p>Kakatiya Nagar, Ramachandrapuram</p>
+            <span>Sangareddy District</span>
           </div>
         </article>
         <article className="info-card light">
           <div className="info-icon">🕉️</div>
           <div>
             <h4>Special Programs</h4>
-            <p>Swamiji Darshan, Grama Yatram, Sacred Rituals</p>
+            <p>{main.category}</p>
             <span className="phone">Contact for Registration</span>
           </div>
         </article>
@@ -40,94 +92,66 @@ export default function EventDetail() {
 
       <section className="container event-detail-body">
         <div className="event-detail-content">
-          <h2> 🚩 Vasantha Navaratri Utsavam 2026 🕉️ </h2>
-          
-          <p>
-            Join us in this divine celebration of Vasantha Navaratri. Experience the spiritual energy through 
-            sacred fire ceremonies, divine Abhishekams, and the rare opportunity to witness the Darshan available for all devotees.
-            Don't miss the grand Kalyana Mahotsavam.
-          </p>
+          <h2>{main.event_id}</h2>
 
-          <h3>Vasantha Navaratri Utsavam 2026 Celebration Schedule</h3>
-          
+          <p>{main.description}</p>
+
+          <h3>{main.event_id} Celebration Schedule</h3>
+
           <div className="event-schedule">
-             <div className="schedule-day">
-              <h4>🗓️ Day 1 to 9 - March 19 to March 28, 2026 </h4>
-              <ul>
-                <li><strong>🌅 6:30 AM:</strong>🙏 Panchamruta Abhishekam - Devotees can register their Gotra and family names for special sankalpam during the festival.</li>
-                <li><strong>🌅 6:30 AM:</strong> 🕉️ Vastra Alankara Seva - Offering new sacred garments to the deity as a mark of devotion.</li>
-              </ul>
-            </div>
+            {dailySections.map((day, di) => (
+              <div className="schedule-day" key={`daily-${di}`}>
+                <h4>Daily Prayers  🙏 </h4>
+                <ul>
+                  {day.dailyItems.map((item, ii) => (
+                    <li key={`daily-${di}-${ii}`}>
+                      {item.time && <strong>{item.time}:</strong>} {item.title}{item.description ? ` - ${item.description}` : ''}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
 
-            <div className="event-detail-image" style={{ backgroundImage: 'url(/assets/hero.jpeg), url(https://images.unsplash.com/photo-1604608672325-f41a9b5e7e2f?auto=format&fit=crop&w=1200&q=80)' }} />
-
-            <div className="schedule-day">
-              <h4>🗓️ Day 1 - March 19, 2026 (Thursday)</h4>
-              <ul>
-                <li><strong>6:00 PM:</strong> 📖 Panchanga Shravanam (Ugadi) - A sacred discourse explaining the yearly Panchangam (Hindu almanac).</li>
-                <li><strong>7:00 PM:</strong> 🌸 Sahasra Silver Pushparchana -  A divine archana performed with silver flowers while chanting the 1000 holy names of the Lord.</li>
-              </ul>
-            </div>
-
-            <div className="schedule-day">
-              <h4>🗓️ Day 5 - March 23, 2026 (Monday) </h4>
-              <ul>
-                <li><strong>🌅 10:00 AM:</strong> 🌺 Kumkumarchana for Seetha Devi - All women are invited to seek blessings for family harmony and well-being.</li>
-              </ul>
-            </div>
-
-            <div className="schedule-day">
-              <h4>🗓️ Day 6 - March 25, 2026 (Wednesday)</h4>
-              <ul>
-                <li><strong>🌅 From 10:00 AM:</strong> 🔥 Sri Lakshmi Sudarshana Homam - A powerful homam invoking Sri Lakshmi and Sudarshana for protection and prosperity. </li>
-              </ul>
-            </div>
-            
-            <div className="schedule-day">
-              <h4>🗓️ Day 7 - March 26, 2026 (Thursday)</h4>
-              <ul>
-                <li><strong>🌅 From 10:00 AM:</strong> 🎉 Swami Edurukolu - A ceremonial procession welcoming the deity with music, chants, and devotion.</li>
-              </ul>
-            </div>
-            
-            <div className="schedule-day">
-              <h4>🗓️ Day 8 - March 27, 2026 (Friday)</h4>
-              <ul>
-                <li><strong>🌅 From 11:00 AM:</strong> 🚩 Sri Rama Kalyana Mahotsavam - The divine wedding ceremony of Lord Sri Rama and Goddess Sita.</li>
-                <li><strong>🌅 From 07:00 PM:</strong> 🎉 Swami Dolostavam - The deity is gently placed on a decorated swing amidst devotional singing.</li>
-              </ul>
-            </div>
-            
-            <div className="schedule-day">
-              <h4>🗓️ Day 9 - March 28, 2026 (Saturday)</h4>
-              <ul>
-                <li><strong>🚩 From 10:00 AM:</strong> 🌼 Pushpa Yagam – 54 Varieties - A special pooja offering 54 different types of flowers to the Lord.</li>
-                <li><strong>🚩 From 06:00 PM:</strong> 🛕 Hanumad, Garuda & Ratha Utsavam - The deity is taken in a grand procession on sacred vahanas and chariot.</li>
-              </ul>
-            </div>
+            {scheduledSections.map((day, di) => (
+              <React.Fragment key={`sched-${di}`}>
+                {di === 0 && imageBg && (
+                  <div className="event-detail-image" style={{ backgroundImage: imageBg }} />
+                )}
+                <div className="schedule-day">
+                  <h4>{day.date}</h4>
+                  <ul>
+                    {day.scheduledItems.map((item, ii) => (
+                      <li key={`sched-${di}-${ii}`}>
+                        {item.time && <strong>{item.time}:</strong>} {item.title}{item.description ? ` - ${item.description}` : ''}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </React.Fragment>
+            ))}
           </div>
 
-          <h3>Featured Events Highlights</h3>
-          <div className="registration-info">
-            <ul>
-              <li><strong>Seva Contribution:</strong> ₹516/- Devotees can participate by Gotra Nama registration for all 9 days.</li>
-              <li><strong>🕉️ Vastra Alankara Seva:</strong> ₹3100/- (includes all offerings)</li>
-              <li><strong>🔥 Sri Lakshmi Sudarshana Homam</strong> ₹2116/- (500 participants capacity)</li>
-              <li><strong>🚩 Sri Rama Kalyana Mahotsavam</strong> ₹2500/- Devotees who contribute can participate Sri Rama Navami celestial wedding celebration.</li>
-              <li><strong>🍛 Anna Prasada Seva:</strong> ₹5116/- Devotees who contribute can participate in the All Events.</li>
-            </ul>
-          </div>
+          {registrationItems.length > 0 && (
+            <>
+              <h3>Featured Events Highlights</h3>
+              <div className="registration-info">
+                <ul>
+                  {registrationItems.map((r, i) => (
+                    <li key={i}>
+                      <strong>{r.title}:</strong> ₹{r.price}/- {r.description}
+                    </li>
+                  ))}
+                  <li key={'annaprasadam'}>
+                      <strong>🍛 Annaprasadam Seva:  </strong> ₹5116/- Donors can particicpate in all the above events.
+                  </li>
+                </ul>
+              </div>
+            </>
+          )}
 
           <h3>📌 Note</h3>
-          <p>
-            On the day of Kalyanotsavam, Anna Prasadam will be served to all devotees.
-          </p>
-          <p>
-            For further details, please contact the temple priest.
-          </p>
-          <p>
-            <strong>Jai Shri Ram 🚩🙏</strong>
-          </p>
+          <p>{main.benefits}</p>
+          <p>For further details, please contact the temple priest.</p>
 
           <a className="btn primary" href="#/payment">Register Now</a>
         </div>
@@ -135,7 +159,7 @@ export default function EventDetail() {
         <aside className="event-detail-sidebar">
           <div className="sidebar-card">
             <h4>🙏 Register &amp; Participate</h4>
-            <p>Secure your spot for the sacred sevas and special programs. Limited participation slots available for Kalyana Mahotsavam and other events.</p>
+            <p>{main.benefits}</p>
             <a className="btn primary" href="#/payment" style={{ display: 'block', textAlign: 'center', marginTop: '0.75rem' }}>
               Register Now
             </a>
@@ -143,7 +167,6 @@ export default function EventDetail() {
           <div className="sidebar-card">
             <h4>Contact Information</h4>
             <p>For registration and more details, please contact the temple office.</p>
-            {/* <div className="phone">📞 +123 123 4567 890</div> */}
             <div className="phone">📧 sitaramachandradevalayam@gmail.com</div>
             <div className="socials">
               <SocialIcons />
@@ -152,10 +175,7 @@ export default function EventDetail() {
           <div className="sidebar-card">
             <h4>Important Notes</h4>
             <ul className="sidebar-notes">
-              <li>Free Sparsha Darshan for all devotees</li>
-              <li>Early morning programs start at 3:30 AM</li>
-              <li>Traditional attire preferred</li>
-              <li>Prasadam will be distributed to all</li>
+              {rows.slice(0, 4).map((r, i) => r.benefits && <li key={i}>{r.benefits}</li>)}
             </ul>
           </div>
           <div className="sidebar-map">

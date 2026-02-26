@@ -14,7 +14,7 @@ function EventCard({ e }) {
   return (
     <article className="news-card" onClick={handleCardClick} style={{ cursor: 'pointer' }}>
       <div className="news-image-wrapper">
-        <div className="news-image" style={{ backgroundImage: `url(${e.local}), url(${e.unsplash})` }}>
+        <div className="news-image" style={{ backgroundImage: `url(${e.imageLocal}), url(${e.imageRemote})` }}>
           <div className="news-overlay"></div>
         </div>
       </div>
