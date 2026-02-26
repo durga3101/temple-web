@@ -17,7 +17,7 @@ export default function EventDetail() {
           <div>
             <h4>Date &amp; Time</h4>
             <p>Three Day Celebration</p>
-            <span>14-16 February, 2026</span>
+            <span>19-28 March, 2026</span>
           </div>
         </article>
         <article className="info-card dark">
@@ -40,64 +40,87 @@ export default function EventDetail() {
 
       <section className="container event-detail-body">
         <div className="event-detail-content">
-          <h2>శ్రీ సీతా రామచంద్ర స్వామి దేవాలయం - 🔱 మహాశివరాత్రి ఉత్సవములు 🔱 </h2>
+          <h2> 🚩 Vasantha Navaratri Utsavam 2026 🕉️ </h2>
           
-          {/* <p className="highlight">
-            జై శ్రీ రామ్ 🚩 🔱 మహాశివరాత్రి ఉత్సవములు  🔱 
-          </p> */}
-
           <p>
-            Join us in this divine three-day celebration of Maha Shivaratri. Experience the spiritual energy through 
-            sacred fire ceremonies, divine Abhishekams, and the rare opportunity to witness Lingodbhava Kala. 
-            Free Sparsha Darshan available for all devotees. Don't miss the grand Kalyana Mahotsavam on the final day.
+            Join us in this divine celebration of Vasantha Navaratri. Experience the spiritual energy through 
+            sacred fire ceremonies, divine Abhishekams, and the rare opportunity to witness the Darshan available for all devotees.
+            Don't miss the grand Kalyana Mahotsavam.
           </p>
 
-          <h3>Three Day Grand Celebration Schedule</h3>
+          <h3>Vasantha Navaratri Utsavam 2026 Celebration Schedule</h3>
           
           <div className="event-schedule">
-            <div className="schedule-day">
-              <h4>🗓️ Day 1 - March 14, 2026 (Friday)</h4>
+             <div className="schedule-day">
+              <h4>🗓️ Day 1 to 9 - March 19 to March 28, 2026 </h4>
               <ul>
-                <li><strong>🔱 9:00 AM:</strong> Ganapati Puja & Punyahavachanam - Begin the sacred celebrations with Ganapati Puja and purification rituals</li>
-                <li><strong>🔥 10:00 AM:</strong> Maha Shivaratri Rudra Homam - Powerful fire ceremony with Rudra mantras to invoke Lord Shiva's grace and blessings</li>
+                <li><strong>🌅 6:30 AM:</strong>🙏 Panchamruta Abhishekam - Devotees can register their Gotra and family names for special sankalpam during the festival.</li>
+                <li><strong>🌅 6:30 AM:</strong> 🕉️ Vastra Alankara Seva - Offering new sacred garments to the deity as a mark of devotion.</li>
+              </ul>
+            </div>
+
+            <div className="event-detail-image" style={{ backgroundImage: 'url(/assets/hero.jpeg), url(https://images.unsplash.com/photo-1604608672325-f41a9b5e7e2f?auto=format&fit=crop&w=1200&q=80)' }} />
+
+            <div className="schedule-day">
+              <h4>🗓️ Day 1 - March 19, 2026 (Thursday)</h4>
+              <ul>
+                <li><strong>6:00 PM:</strong> 📖 Panchanga Shravanam (Ugadi) - A sacred discourse explaining the yearly Panchangam (Hindu almanac).</li>
+                <li><strong>7:00 PM:</strong> 🌸 Sahasra Silver Pushparchana -  A divine archana performed with silver flowers while chanting the 1000 holy names of the Lord.</li>
               </ul>
             </div>
 
             <div className="schedule-day">
-              <h4>🗓️ Day 2 - March 15, 2026 (Saturday) - Maha Shivaratri</h4>
+              <h4>🗓️ Day 5 - March 23, 2026 (Monday) </h4>
               <ul>
-                <li><strong>🌅 3:30 AM – 4:30 AM:</strong> Ganapati Homam - Early morning homam during brahma muhurta invoking Lord Ganesha's grace</li>
-                <li><strong>🪔 From 5:00 AM:</strong> Abhishekam & Special Pujas - Divine Abhishekam with milk, honey, ghee, and holy water accompanied by Vedic chants</li>
-                <li><strong>🌟 Until 1:30 PM:</strong> Free Sparsha Darshan - Continuous free darshan for all devotees</li>
-                <li><strong>🌟 4:00 PM – 9:00 PM:</strong> Free Sparsha Darshan - Evening darshan session with deity in golden attire</li>
-                <li><strong>🌙 11:30 PM – 12:30 AM:</strong> Lingodbhava Kala Abhishekam - Sacred midnight Abhishekam during the most auspicious time when Lord Shiva manifests as cosmic pillar of light</li>
+                <li><strong>🌅 10:00 AM:</strong> 🌺 Kumkumarchana for Seetha Devi - All women are invited to seek blessings for family harmony and well-being.</li>
               </ul>
             </div>
 
             <div className="schedule-day">
-              <h4>🗓️ Day 3 - March 16, 2026 (Sunday)</h4>
+              <h4>🗓️ Day 6 - March 25, 2026 (Wednesday)</h4>
               <ul>
-                <li><strong>🚩 From 10:30 AM:</strong> Ishanya Devatas Kalyana Mahotsavam - Grand celestial wedding ceremony with traditional music and offerings</li>
-                <li>Distribution of blessed prasadam to all devotees</li>
+                <li><strong>🌅 From 10:00 AM:</strong> 🔥 Sri Lakshmi Sudarshana Homam - A powerful homam invoking Sri Lakshmi and Sudarshana for protection and prosperity. </li>
+              </ul>
+            </div>
+            
+            <div className="schedule-day">
+              <h4>🗓️ Day 7 - March 26, 2026 (Thursday)</h4>
+              <ul>
+                <li><strong>🌅 From 10:00 AM:</strong> 🎉 Swami Edurukolu - A ceremonial procession welcoming the deity with music, chants, and devotion.</li>
+              </ul>
+            </div>
+            
+            <div className="schedule-day">
+              <h4>🗓️ Day 8 - March 27, 2026 (Friday)</h4>
+              <ul>
+                <li><strong>🌅 From 11:00 AM:</strong> 🚩 Sri Rama Kalyana Mahotsavam - The divine wedding ceremony of Lord Sri Rama and Goddess Sita.</li>
+                <li><strong>🌅 From 07:00 PM:</strong> 🎉 Swami Dolostavam - The deity is gently placed on a decorated swing amidst devotional singing.</li>
+              </ul>
+            </div>
+            
+            <div className="schedule-day">
+              <h4>🗓️ Day 9 - March 28, 2026 (Saturday)</h4>
+              <ul>
+                <li><strong>🚩 From 10:00 AM:</strong> 🌼 Pushpa Yagam – 54 Varieties - A special pooja offering 54 different types of flowers to the Lord.</li>
+                <li><strong>🚩 From 06:00 PM:</strong> 🛕 Hanumad, Garuda & Ratha Utsavam - The deity is taken in a grand procession on sacred vahanas and chariot.</li>
               </ul>
             </div>
           </div>
 
-          <div className="event-detail-image" style={{ backgroundImage: 'url(/assets/poster.jpeg), url(https://images.unsplash.com/photo-1604608672325-f41a9b5e7e2f?auto=format&fit=crop&w=1200&q=80)' }} />
-
           <h3>Featured Events Highlights</h3>
           <div className="registration-info">
             <ul>
-              <li><strong>Seva Contribution:</strong> ₹1116/- Devotees who contribute can participate in the Lingodbhava Kalam and Shivaratri Kalyanam.</li>
-              <li><strong>Rudra Homam:</strong> ₹2500/- (3 hours duration, includes all offerings)</li>
-              <li><strong>Kalyana Mahotsavam:</strong> ₹2500/- (500 participants capacity)</li>
-              <li><strong>Anna Prasada Seva:</strong> ₹5116/- Devotees who contribute can participate in the Lingodbhava Kalam and Shivaratri Kalyanam.</li>
+              <li><strong>Seva Contribution:</strong> ₹516/- Devotees can participate by Gotra Nama registration for all 9 days.</li>
+              <li><strong>🕉️ Vastra Alankara Seva:</strong> ₹3100/- (includes all offerings)</li>
+              <li><strong>🔥 Sri Lakshmi Sudarshana Homam</strong> ₹2116/- (500 participants capacity)</li>
+              <li><strong>🚩 Sri Rama Kalyana Mahotsavam</strong> ₹2500/- Devotees who contribute can participate Sri Rama Navami celestial wedding celebration.</li>
+              <li><strong>🍛 Anna Prasada Seva:</strong> ₹5116/- Devotees who contribute can participate in the All Events.</li>
             </ul>
           </div>
 
           <h3>📌 Note</h3>
           <p>
-            On the day of Shivaratri and Kalyanotsavam, Anna Prasadam will be served to all devotees.
+            On the day of Kalyanotsavam, Anna Prasadam will be served to all devotees.
           </p>
           <p>
             For further details, please contact the temple priest.
@@ -110,6 +133,13 @@ export default function EventDetail() {
         </div>
 
         <aside className="event-detail-sidebar">
+          <div className="sidebar-card">
+            <h4>🙏 Register &amp; Participate</h4>
+            <p>Secure your spot for the sacred sevas and special programs. Limited participation slots available for Kalyana Mahotsavam and other events.</p>
+            <a className="btn primary" href="#/payment" style={{ display: 'block', textAlign: 'center', marginTop: '0.75rem' }}>
+              Register Now
+            </a>
+          </div>
           <div className="sidebar-card">
             <h4>Contact Information</h4>
             <p>For registration and more details, please contact the temple office.</p>
