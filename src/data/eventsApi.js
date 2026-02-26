@@ -47,3 +47,10 @@ export async function fetchEventPageData(eventId) {
 
 // Alias kept for EventContext compatibility
 export const fetchAllEventData = fetchEvents
+
+// Fetch data from the 'Home' sheet (used by homepage components)
+export async function fetchHomeData() {
+  const rows = await fetchCsv('Live_Broadcast')
+  console.log('[eventsApi] home rows fetched:', rows.length)
+  return rows
+}
