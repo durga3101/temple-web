@@ -68,8 +68,7 @@ export default function EventDetail() {
           <div className="info-icon">📅</div>
           <div>
             <h4>Date &amp; Time</h4>
-            <p>{main.subtitle}</p>
-            <span>{main.date}{main.time ? ` · ${main.time}` : ''}</span>
+            <span>{main.date} {main.time ? `⏱️ ${main.time}` : ''} </span>
           </div>
         </article>
         <article className="info-card dark">
@@ -84,7 +83,8 @@ export default function EventDetail() {
           <div className="info-icon">🕉️</div>
           <div>
             <h4>Special Programs</h4>
-            <p>{main.category}</p>
+            <p>{main.event_id}</p>
+            {/* <p>{main.category}</p> */}
             <span className="phone">Contact for Registration</span>
           </div>
         </article>
