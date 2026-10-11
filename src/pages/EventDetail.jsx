@@ -3,7 +3,7 @@ import PageHero from '../components/PageHero'
 import SocialIcons from '../components/SocialIcons'
 import { fetchEventPageData } from '../data/eventsApi'
 
-const EVENT_ID = 'Vasantha Navaratri Utsavam 2026'
+const EVENT_ID = 'Sri Vijaya Durga Devi Sharannavaratrotsavalu 2026'
 
 export default function EventDetail() {
   const [rows, setRows]       = useState([])
@@ -61,6 +61,7 @@ export default function EventDetail() {
       <PageHero
         title={main.event_id}
         description={main.description}
+        backgroundImage="/assets/dasara.jpeg"
       />
 
       <section className="container event-detail-info">
@@ -131,6 +132,9 @@ export default function EventDetail() {
             ))}
           </div>
 
+          <h3>📜 Full Festival Schedule</h3>
+          <div className="event-detail-image" style={{ backgroundImage: 'url(/assets/poster.jpeg)' }} />
+
           {registrationItems.length > 0 && (
             <>
               <h3>Featured Events Highlights</h3>
@@ -141,9 +145,6 @@ export default function EventDetail() {
                       <strong>{r.title}:</strong> ₹{r.price}/- {r.description}
                     </li>
                   ))}
-                  <li key={'annaprasadam'}>
-                      <strong>🍛 Annaprasadam Seva:  </strong> ₹5116/- Donors can particicpate in all the above events.
-                  </li>
                 </ul>
               </div>
             </>
@@ -168,6 +169,7 @@ export default function EventDetail() {
             <h4>Contact Information</h4>
             <p>For registration and more details, please contact the temple office.</p>
             <div className="phone">📧 sitaramachandradevalayam@gmail.com</div>
+            <div className="phone">📞 9849918520, 9247192623</div>
             <div className="socials">
               <SocialIcons />
             </div>

@@ -15,14 +15,14 @@ export function parseCsv(text) {
     for (let i = 0; i < line.length; i++) {
       const ch = line[i]
 
-      // Escaped quote ""
-      if (ch === '"' && line[i + 1] === '"') {
-        cur += '"'
-        i++
-        continue
-      }
-
       if (ch === '"') {
+        // Escaped quote "" only counts inside an already-open quoted field;
+        // otherwise "" is an empty quoted field (two toggles, no char added).
+        if (inQuotes && line[i + 1] === '"') {
+          cur += '"'
+          i++
+          continue
+        }
         inQuotes = !inQuotes
         continue
       }

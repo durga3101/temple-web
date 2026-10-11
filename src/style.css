@@ -125,6 +125,15 @@
 
 /* Events page styles */
 .events-page { background:#f8fafc }
+.events-page .page-hero-overlay,
+.event-detail-page .page-hero-overlay { padding:150px 0; background:rgba(7,27,54,0.5) }
+.events-page .page-hero h1 { display:none } /* temp hidden, re-enable later */
+.events-page .page-hero,
+.event-detail-page .page-hero { background-size:cover; background-position:top center }
+.event-detail-page .page-hero h1 { display:none } /* temp hidden, re-enable later */
+.event-detail-page .page-hero p { display:none } /* temp hidden, re-enable later */
+
+.events-page .news-description { display:none } /* temp hidden, re-enable later */
 .events-listing { margin-top:40px; margin-bottom:40px }
 .news-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:30px; margin-top:28px }
 
@@ -133,6 +142,7 @@
 
 .news-image-wrapper { position:relative; overflow:hidden; border-radius:12px 12px 0 0 }
 .news-image { display:block; height:220px; background-size:cover; background-position:center; position:relative }
+.events-page .news-image { height:340px }
 .news-overlay { position:absolute; inset:0; background:linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.2) 100%); opacity:0; transition:opacity 0.3s ease }
 .news-card:hover .news-overlay { opacity:1 }
 

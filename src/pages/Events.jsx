@@ -75,7 +75,7 @@ export default function Events() {
 
   return (
     <div className="events-page">
-      <PageHero title={events.length ? events[0].event_id : "Temple Events"} />
+      <PageHero title={events.length ? events[0].event_id : "Temple Events"} backgroundImage="/assets/dasara.jpeg" />
 
       <main className="container events-listing">
         {loading && (
